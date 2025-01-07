@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -20,8 +21,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black font-serif `}
       >
+        {/* <nav>
+          <ul>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/skripsi">Skripsi</Link></li>
+            <li><Link href="/tesis">Tesis</Link></li>
+            <li><Link href="/spss">SPSS</Link></li>
+          </ul>
+        </nav> */}
         {children}
       </body>
     </html>
