@@ -53,7 +53,7 @@ export default function ContactPage() {
   return (
     <div className='pt-28 p-10 bg-gray-50 min-h-screen'>
       <h1 className='text-3xl font-bold text-center mb-8'>Hubungi Kami</h1>
-      <div className='container mx-auto max-w-4xl'>
+      <div className='container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8'>
         <p className='text-center text-gray-600 mb-8'>
           Kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui
           informasi di bawah ini atau kirimkan pesan langsung melalui form

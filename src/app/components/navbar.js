@@ -40,7 +40,7 @@ export default function Navbar() {
   ));
 
   return (
-    <div className="bg-teal-200 font-bold p-2 shadow-lg fixed top-0 left-0 w-full z-10">
+    <div className="bg-teal-200 font-bold p-2 sm:p-3 shadow-lg fixed top-0 left-0 w-full z-10">
       <nav className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2 cursor-pointer">
           <div className="flex items-center overflow-hidden hover:scale-105 transition duration-300">
