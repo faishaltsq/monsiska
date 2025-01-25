@@ -1,8 +1,12 @@
+'use client'
+
 import React from "react";
-import Homescreen from "./pages/home";
-import Navbar from "./components/navbar";
-export default function Home() {
+import Home from "./home/index"; // Import the Home component
+
+export default function myApp({ pageProps }) {
   return (
-    <><Navbar /><Homescreen /></>
-  )
+    <>
+      <Home {...pageProps} /> {/* Render the Home component */}
+    </>
+  );
 }
