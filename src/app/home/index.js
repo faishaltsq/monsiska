@@ -82,39 +82,11 @@ const additionalInfo = [
   }
 ]
 
-const ServiceCard = ({ title, description }) => (
-  <div className='bg-white shadow-lg rounded-lg p-6'>
-    <h4 className='text-xl font-bold mb-2'>{title}</h4>
-    <p>{description}</p>
-  </div>
-)
-
-const ResearchConsultationCard = ({ title, image, description }) => (
-  <div className='bg-white shadow-lg rounded-lg p-6 hover:scale-105 transition duration-300'>
-    <div className='flex items-center mb-4 overflow-hidden hover:scale-105 transition duration-300'>
-      <Image src={image} width={30} height={30} alt={`${title} Icon`} />
-      <h4 className='text-xl font-bold ml-3'>{title}</h4>
-    </div>
-    <p>{description}</p>
-  </div>
-)
-
-const InfoCard = ({ title, content }) => (
-  <div className='bg-gray-100 p-5 rounded-lg shadow-md'>
-    <h2 className='font-semibold text-xl text-gray-800'>{title}</h2>
-    <ul className='space-y-1 mt-2 text-gray-600'>
-      {content.map((item, idx) => (
-        <li key={idx}>→ {item}</li>
-      ))}
-    </ul>
-  </div>
-)
-
 export default function Home () {
   return (
     <div className='pt-28 p-10 flex flex-col lg:flex-row'>
       <div className='lg:w-3/4 pr-5'>
-        <div className='flex items-center '>
+        <div className='flex items-center justify-center'>
           <Image
             src='/images/MONSISKAMI-removebg-preview.png'
             width={30}
@@ -122,27 +94,29 @@ export default function Home () {
             alt='Monsiskami Logo'
             priority
           />
-          <h1 className='text-2xl font-bold text-teal-900'>onsiskami</h1>
+          <h1 className='text-2xl font-bold text-teal-900 '>onsiskami</h1>
         </div>
-        <h2 className='text-justify text-lg text-gray-700 mt-5 mb-4'>
+        <h2 className='text-justify text-lg text-teal-900 mt-5 mb-4'>
           Jasa Konsultan Manajemen Mutu untuk Rumah Sakit, Puskesmas, Klinik,
           dan Lembaga Pendidikan. Melayani dengan Profesional dan Performa yang
           maksimal untuk kebutuhan yang lebih efisien.
         </h2>
-        <Image
-          src='/images/konsultan.png'
-          width={750}
-          height={750}
-          alt='Consultant Image'
-          className='rounded-lg p-3 w-full h-auto object-contain'
-          priority
-        />
+        <div className='flex justify-center'>
+          <Image
+            src='/images/konsultan.png'
+            width={750}
+            height={750}
+            alt='Consultant Image'
+            className='rounded-lg p-3 w-full h-auto object-contain'
+            priority
+          />
+        </div>
         <div className='p-5'>
-          <p className='text-justify text-gray-600'>
+          <p className='text-justify text-teal-800'>
             Dunia standar dan regulasi, akreditasi, tes, dan sertifikasi tidak
             sesederhana itu. Tapi mereka membuat hidup dan bisnis jauh lebih
-            efisien dan aman. Bagaimana Monsiska MI menguji? Apa yang diperiksa
-            oleh Monsiska MI? Anda akan menemukan banyak jawaban di sini.
+            efisien dan aman. Bagaimana Monsiskami menguji? Apa yang diperiksa
+            oleh Monsiskami? Anda akan menemukan jawaban di sini.
           </p>
         </div>
         <section
@@ -153,30 +127,63 @@ export default function Home () {
             <h3 className='text-3xl font-bold text-center mb-8'>
               Layanan Kami
             </h3>
-            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-hidden hover:scale-105 transition duration-300'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
               {services.map((service, index) => (
-                <ServiceCard key={index} {...service} />
+                <div
+                  key={index}
+                  className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'
+                >
+                  <h3 className='text-lg font-bold text-teal-900 mb-2'>
+                    {service.title}
+                  </h3>
+                  <p className='text-teal-800'>{service.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
-        <section id='research-consultation' className='py-16 bg-gray-50'>
+        <section id='research-consultation'>
           <div className='container mx-auto'>
             <h3 className='text-3xl font-bold text-center mb-8'>
-              Jasa Konsultasi Penelitian
+              Jenis Konsultasi Penelitian
             </h3>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
               {researchConsultations.map((consultation, index) => (
-                <ResearchConsultationCard key={index} {...consultation} />
+                <div
+                  key={index}
+                  className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'
+                >
+                  <div className='flex items-center justify-center'>
+                    <Image
+                      src={consultation.image}
+                      width={30}
+                      height={30}
+                      alt={consultation.title}
+                    />
+                    <h3 className='text-lg ml-2 font-bold text-teal-900 mb-2'>
+                      {consultation.title}
+                    </h3>
+                  </div>
+                  <p className='text-teal-900'>{consultation.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
         <section id='consultation' className='py-10 bg-white'>
           <div className='container mx-auto'>
-            <h3 className='text-3xl font-bold text-center mb-8'>
-              Jasa Konsultasi Penelitian Dengan Jenis Metodenya
-            </h3>
+            <div className='flex items-center justify-center mb-6'>
+              <Image
+                src='/images/research.png'
+                width={40}
+                height={30}
+                alt='Research Image'
+                className='mr-3'
+              />
+              <h1 className='text-3xl font-bold text-teal-900'>
+                Konsultasi Penelitian Dengan Jenis Metodenya
+              </h1>
+            </div>
             <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-8 bg-slate-100 rounded-2xl p-5'>
               <ul className='list-disc pl-5 space-y-1 justify-center'>
                 <li>Validitas & Reliabilitas Kuesioner</li>
@@ -207,107 +214,21 @@ export default function Home () {
                 width={40}
                 height={30}
                 alt='spss statistik'
+                className='mr-3'
               />
-              <h1 className='text-3xl font-bold text-gray-900 ml-3'>
+              <h1 className='text-3xl font-bold text-teal-900'>
                 Statistik & Analisis Data
               </h1>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-              {/* SPSS Section */}
-              <div className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'>
-                <div className='text-red-500 text-4xl mb-4'>
-                  <i className='fas fa-code'></i>
-                </div>
-                <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Konsultasi dukungan SPSS
-                </h3>
-                <p className='text-gray-600'>
-                  Layanan konsultasi pengolahan data SPSS: Manfaatkan analisis
-                  statistik canggih dari perangkat lunak SPSS IBM untuk menggali
-                  peluang, meningkatkan efisiensi, dan mengurangi risiko. Cocok
-                  untuk kebutuhan analisis kolaboratif, ilmu data perusahaan,
-                  pembelajaran, analisis prediktif, atau pemodelan prediktif.
-                </p>
-              </div>
-              {/* EViews Section */}
-              <div className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'>
-                <div className='text-red-500 text-4xl mb-4'>
-                  <i className='fas fa-chart-bar'></i>
-                </div>
-                <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Konsultasi dukungan EVIEWS
-                </h3>
-                <p className='text-gray-600'>
-                  EVIEWS menyediakan alat statistik, prediksi, dan pemodelan
-                  yang canggih melalui antarmuka berbasis objek yang inovatif
-                  dan mudah digunakan. Solusi ini dirancang untuk memenuhi
-                  kebutuhan peneliti akademis, perusahaan, lembaga pemerintah,
-                  dan pelajar.
-                </p>
-              </div>
-              {/* AMOS Section */}
-              <div className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'>
-                <div className='text-red-500 text-4xl mb-4'>
-                  <i className='fas fa-cubes'></i>
-                </div>
-                <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Konsultasi dukungan AMOS
-                </h3>
-                <p className='text-gray-600'>
-                  AMOS adalah perangkat lunak statistik yang merupakan singkatan
-                  dari "Analysis of Moment Structures" atau analisis struktur
-                  momen. Perangkat ini dirancang untuk digunakan dalam Pemodelan
-                  Persamaan Struktural, analisis jalur, dan analisis faktor
-                  konfirmatori.
-                </p>
-              </div>
-              {/* LISREL Section */}
-              <div className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'>
-                <div className='text-red-500 text-4xl mb-4'>
-                  <i className='fas fa-cogs'></i>
-                </div>
-                <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Konsultasi dukungan LISREL
-                </h3>
-                <p className='text-gray-600'>
-                  LISREL merupakan perangkat lunak yang digunakan untuk
-                  pemodelan persamaan struktural, manipulasi data dan analisis
-                  statistik dasar, pemodelan hierarkis dan non-linier, pemodelan
-                  linier umum, dan pemodelan linier umum untuk data bertingkat.
-                </p>
-              </div>
-              {/* SMART PLS Section */}
-              <div className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'>
-                <div className='text-red-500 text-4xl mb-4'>
-                  <i className='fas fa-code'></i>
-                </div>
-                <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Konsultasi SMART PLS
-                </h3>
-                <p className='text-gray-600'>
-                  SMART PLS adalah perangkat lunak Partial Least Squares (PLS)
-                  yang memfasilitasi analisis jalur dan pemodelan persamaan
-                  struktural secara efisien. Cocok bagi penelitian akademis,
-                  korporat, dan individu untuk mengoptimalkan pendekatan
-                  analisis data.
-                </p>
-              </div>
-              {/* Training Section */}
-              <div className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'>
-                <div className='text-red-500 text-4xl mb-4'>
-                  <i className='fas fa-users'></i>
-                </div>
-                <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Konsultasi dan Training
-                </h3>
-                <p className='text-gray-600'>
-                  Hubungi kami untuk layanan konsultasi statistik profesional
-                  menggunakan SPSS, EVIEWS, AMOS, atau Smart PLS. Kami siap
-                  membantu sesuai kebutuhan Anda, baik untuk riset perkantoran,
-                  penelitian organisasi, pelatihan, maupun jasa analisis data
-                  penelitian.
-                </p>
-              </div>
+            <div className=' justify-center gap-8 bg-slate-100 rounded-2xl p-5'>
+              <ul className='list-disc pl-5 space-y-1 justify-center'>
+                <li>Konsultasi dukungan SPSS</li>
+                <li>Konsultasi dukungan EVIEWS</li>
+                <li>Konsultasi dukungan AMOS</li>
+                <li>Konsultasi dukungan LISREL</li>
+                <li>Konsultasi SMART PLS</li>
+                <li>Konsultasi dan Training</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -315,7 +236,7 @@ export default function Home () {
       <div className='lg:w-1/4 pl-5 mt-10 lg:mt-0'>
         <div className='grid grid-cols-1 gap-4'>
           <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'>
-            <h2 className='font-semibold text-xl text-gray-800'>
+            <h2 className='font-semibold text-xl text-teal-900'>
               Ingin Bertanya?
             </h2>
             <Image
@@ -323,23 +244,35 @@ export default function Home () {
               width={300}
               height={200}
               alt='Question Image'
-              className='rounded-full p-3'
+              className='rounded-full p-3 hover:scale-105 transition-transform'
             />
-            <p className='text-justify text-gray-600'>
+            <p className='text-justify text-teal-800'>
               Ayo Konsultasikan Penelitianmu dengan kami!
             </p>
             <a
-              href='https://wa.me/6281215416402'
+              href='https://wa.me/6281329796998'
               className='bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-2xl mt-4 block text-center'
             >
               Konsultasi Gratis!
             </a>
           </div>
           {additionalInfo.map((info, index) => (
-            <InfoCard key={index} {...info} />
+            <div
+              key={index}
+              className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'
+            >
+              <h2 className='font-semibold text-xl text-teal-900'>
+                {info.title}
+              </h2>
+              <ul className='list-disc pl-5 space-y-1 mt-2 text-teal-800'>
+                {info.content.map((content, index) => (
+                  <li key={index}>{content}</li>
+                ))}
+              </ul>
+            </div>
           ))}
-          <div>
-            <h2 className='font-semibold text-xl text-gray-800'>
+          <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'>
+            <h2 className='font-semibold text-xl text-teal-900'>
               Dosen Yang akan membantu anda
             </h2>
             <div className='grid grid-cols-1 gap-4'>
@@ -351,17 +284,33 @@ export default function Home () {
                   alt='Basirun'
                   className='rounded-full p-3'
                 />
-                <h3 className='text-lg font-semibold text-gray-800'>
-                  H. Basirun, M.Kes, 
+                <h3 className='text-lg font-semibold text-teal-900'>
+                  Dr. H.Muh. Basirun Al Ummah. M.Kes.
                 </h3>
-                <p className='text-gray-600'>
+                <p className='text-teal-800'>
                   Dosen Kesehatan dan manajemen Universitas Muhammadiyah Gombong
                 </p>
               </div>
+            </div>
+            <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300 mt-4'>
+              <h2 className='font-semibold text-xl text-teal-900'>
+                Office Address
+              </h2>
+              <ul className='list-disc pl-5 space-y-1 mt-2 text-teal-900'>
+                <li>
+                  <strong>Kebumen:</strong> Jl. Candiwulan Ds Mangli RT 01/ RW
+                  01, Kec. Kuwarasan, Kebumen-Jawa Tengah 54366
+                </li>
+                <li>
+                  <strong>Batam:</strong> Perumahan Bida Asri 3, Blok A2 No 9,
+                  Batu besar, Nongsa, Kota Batam-Kepulauan Riau, 29465
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   )
 }

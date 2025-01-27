@@ -42,7 +42,10 @@ export default function Navbar() {
   return (
     <div className="bg-teal-200 font-bold p-2 sm:p-3 shadow-lg fixed top-0 left-0 w-full z-10">
       <nav className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2 cursor-pointer">
+        <Link
+          href="/"
+          className="flex items-center space-x-2 cursor-pointer px-2 py-1 rounded hover:bg-teal-300 transition duration-300"
+        >
           <div className="flex items-center overflow-hidden hover:scale-105 transition duration-300">
             <Image
               src="/images/MONSISKAMI-removebg-preview.png"
@@ -76,7 +79,7 @@ export default function Navbar() {
             <li key={link.name} className="border-b lg:border-none">
               <Link
                 href={link.path}
-                className="block px-4 py-3 lg:px-1 lg:py-4 overflow-hidden hover:scale-105 transition duration-300 rounded w-full text-left lg:text-center text-teal-900 font-bold"
+                className="block px-4 py-3 lg:px-1 lg:py-4 hover:bg-teal-300 rounded transition duration-300 text-teal-900 font-bold"
                 onClick={() => setMenuOpen(false)} // Close menu on navigation
               >
                 {link.name}

@@ -52,7 +52,7 @@ export default function ContactPage() {
 
   return (
     <div className='pt-28 p-10 bg-gray-50 min-h-screen'>
-      <h1 className='text-3xl font-bold text-center mb-8'>Hubungi Kami</h1>
+      <h1 className='text-3xl font-bold text-center mb-8 text-teal-500'>Hubungi Kami</h1>
       <div className='container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8'>
         <p className='text-center text-gray-600 mb-8'>
           Kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui
@@ -70,7 +70,7 @@ export default function ContactPage() {
             />
             <h2 className='text-xl font-semibold text-teal-500 mb-2'>WhatsApp</h2>
             <a
-              href='https://wa.me/628132976998'
+              href='https://wa.me/6281329796998'
               target='_blank'
               rel='noopener noreferrer'
               className='text-teal-900 hover:underline underline'
@@ -107,7 +107,7 @@ export default function ContactPage() {
               type='text'
               id='name'
               name='name'
-              placeholder='Masukkan nama Anda'
+              placeholder='Your Name'
               className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-400'
               value={formData.name}
               onChange={handleChange}
@@ -121,7 +121,7 @@ export default function ContactPage() {
               type='email'
               id='email'
               name='email'
-              placeholder='Masukkan email Anda'
+              placeholder='yourname@example.com'
               className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-400'
               value={formData.email}
               onChange={handleChange}
@@ -134,7 +134,7 @@ export default function ContactPage() {
             <textarea
               id='message'
               name='message'
-              placeholder='Tulis pesan Anda'
+              placeholder='Type your message here'
               rows='5'
               className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-400'
               aria-label='Pesan Anda'
@@ -149,7 +149,11 @@ export default function ContactPage() {
           >
             {isLoading ? 'Mengirim...' : 'Kirim Pesan'}
           </button>
-          {status && <p className='mt-4 text-center'>{status}</p>}
+          {status && (
+            <p className={`mt-4 text-center ${status.includes('berhasil') ? 'text-green-500' : 'text-red-500'}`}>
+              {status}
+            </p>
+          )}
         </form>
       </div>
     </div>
