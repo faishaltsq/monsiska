@@ -53,7 +53,7 @@ export default function Navbar() {
               height={20}
               alt="Monsiskami Logo"
             />
-            <h1 className="text-2xl font-bold text-teal-900 ">onsiskami.id</h1>
+            <h1 className="text-2xl font-bold text-teal-900 ">onsiska MI</h1>
           </div>
         </Link>
 

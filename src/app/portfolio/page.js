@@ -53,37 +53,37 @@ const portfolioItems = [
     id: 4,
     image: '/images/portfolio1.jpg',
     height: 300,
-    title: 'Monsiskami'
+    title: 'Monsiska MI'
   },
   {
     id: 5,
     image: '/images/portfolio2.jpg',
     height: 300,
-    title: 'Monsiskami'
+    title: 'Monsiska MI'
   },
   {
     id: 6,
     image: '/images/portfolio3.jpg',
     height: 300,
-    title: 'Monsiskami'
+    title: 'Monsiska MI'
   },
   {
     id: 7,
     image: '/images/portfolio4.jpg',
     height: 300,
-    title: 'Monsiskami'
+    title: 'Monsiska MI'
   },
   {
     id: 8,
     image: '/images/portfolio5.jpg',
     height: 500,
-    title: 'Monsiskami'
+    title: 'Monsiska MI'
   },
   {
     id: 9,
     image: '/images/portfolio6.jpg',
     height: 500,
-    title: 'Monsiskami'
+    title: 'Monsiska MI'
   }
 ]
 

@@ -56,7 +56,7 @@ const additionalInfo = [
     ]
   },
   {
-    title: 'Di Monsiskami Bisa Konsultasi Apa?',
+    title: 'Di Monsiska MI Bisa Konsultasi Apa?',
     content: [
       'Judul Penelitian',
       'Metode Penelitian',
@@ -91,10 +91,10 @@ export default function Home () {
             src='/images/MONSISKAMI-removebg-preview.png'
             width={30}
             height={20}
-            alt='Monsiskami Logo'
+            alt='Monsiska MI Logo'
             priority
           />
-          <h1 className='text-2xl font-bold text-teal-900 '>onsiskami</h1>
+          <h1 className='text-2xl font-bold text-teal-900 '>onsiska MI</h1>
         </div>
         <h2 className='text-justify text-lg text-teal-900 mt-5 mb-4'>
           Jasa Konsultan Manajemen Mutu untuk Rumah Sakit, Puskesmas, Klinik,
@@ -115,8 +115,8 @@ export default function Home () {
           <p className='text-justify text-teal-800'>
             Dunia standar dan regulasi, akreditasi, tes, dan sertifikasi tidak
             sesederhana itu. Tapi mereka membuat hidup dan bisnis jauh lebih
-            efisien dan aman. Bagaimana Monsiskami menguji? Apa yang diperiksa
-            oleh Monsiskami? Anda akan menemukan jawaban di sini.
+            efisien dan aman. Bagaimana Monsiska MI menguji? Apa yang diperiksa
+            oleh Monsiska MI? Anda akan menemukan jawaban di sini.
           </p>
         </div>
         <section
@@ -285,7 +285,7 @@ export default function Home () {
                   className='rounded-full p-3'
                 />
                 <h3 className='text-lg font-semibold text-teal-900'>
-                  Dr. H.Muh. Basirun Al Ummah. M.Kes.
+                Dr. H. Muhammad Basirun Al Ummah, M.Kes.
                 </h3>
                 <p className='text-teal-800'>
                   Dosen Kesehatan dan manajemen Universitas Muhammadiyah Gombong
