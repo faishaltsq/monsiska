@@ -193,8 +193,6 @@ export default function Home () {
                 <li>Path Analysis</li>
                 <li>Analisis Data Time Series</li>
                 <li>Statistik Parametrik & Non-parametrik</li>
-              </ul>
-              <ul className='list-disc pl-5 space-y-1 justify-center'>
                 <li>Successive Interval Method</li>
                 <li>Metode ANOVA</li>
                 <li>Analisis Multivariate</li>

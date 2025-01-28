@@ -36,7 +36,7 @@ const portfolioItems = [
     id: 2,
     title: 'Workshop Manajemen Mutu',
     description:
-      'Pelatihan intensif tentang implementasi ISO 9001:2015 untuk manajemen mutu yang lebih baik.',
+      'Pelatihan intensif tentang implementasi ISO 9001: 2015 untuk manajemen mutu yang lebih baik.',
     image: '/images/konsultan.png',
     height: 300
   },
@@ -98,7 +98,7 @@ const Portfolio = () => {
       </div>
       <div>
         <h1 className='text-2xl font-bold text-center mb-8 mt-8 text-teal-500'>
-          Portfolio Kami selama lebih dari 5 tahun berdiri telah membantu banyak
+          Portofolio Kami selama lebih dari 5 tahun berdiri telah membantu banyak
           klien dalam meningkatkan kualitas layanan dan produk mereka. Berikut
           adalah beberapa portofolio kami yang telah berhasil kami kerjakan.
         </h1>
