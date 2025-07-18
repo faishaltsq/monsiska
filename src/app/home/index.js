@@ -286,7 +286,7 @@ export default function Home () {
                 Dr. H. Muhammad Basirun Al Ummah, M.Kes.
                 </h3>
                 <p className='text-sky-800'>
-                  Dosen Kesehatan dan manajemen Universitas Muhammadiyah Gombong
+                  Dosen Kesehatan dan Manajemen Universitas Muhammadiyah Gombong
                 </p>
               </div>
             </div>
@@ -301,7 +301,7 @@ export default function Home () {
                 </li>
                 <li>
                   <strong>Batam:</strong> Perumahan Bida Asri 3, Blok A2 No 9,
-                  Batu besar, Nongsa, Kota Batam-Kepulauan Riau, 29465
+                  Batu Besar, Nongsa, Kota Batam-Kepulauan Riau, 29465
                 </li>
               </ul>
             </div>
