@@ -52,7 +52,7 @@ export default function ContactPage() {
 
   return (
     <div className='pt-28 p-10 bg-gray-50 min-h-screen'>
-      <h1 className='text-3xl font-bold text-center mb-8 text-teal-500'>Hubungi Kami</h1>
+      <h1 className='text-3xl font-bold text-center mb-8 text-sky-500'>Hubungi Kami</h1>
       <div className='container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8'>
         <p className='text-center text-gray-600 mb-8'>
           Kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui
@@ -68,14 +68,14 @@ export default function ContactPage() {
               height={100}
               className='mb-4'
             />
-            <h2 className='text-xl font-semibold text-teal-500 mb-2'>WhatsApp</h2>
+            <h2 className='text-xl font-semibold text-sky-500 mb-2'>WhatsApp</h2>
             <a
-              href='https://wa.me/6281329796998'
+              href='https://wa.me/628117784099'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-teal-900 hover:underline underline'
+              className='text-sky-900 hover:underline underline'
             >
-              +62 813-2976-998 (Ahdi Fitriyanti)
+              +62 811-7784-099 (Ahdi Fitriyanti)
             </a>
           </div>
           <div className='flex flex-col items-center'>
@@ -86,12 +86,12 @@ export default function ContactPage() {
               height={100}
               className='mb-4'
             />
-            <h2 className='text-xl font-semibold text-teal-500 mb-2'>Email</h2>
+            <h2 className='text-xl font-semibold text-sky-500 mb-2'>Email</h2>
             <a
               href='mailto:monsiskami@gmail.com'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-teal-900 hover:underline underline'
+              className='text-sky-900 hover:underline underline'
             >
               monsiskami@gmail.com
             </a>
@@ -108,7 +108,7 @@ export default function ContactPage() {
               id='name'
               name='name'
               placeholder='Your Name'
-              className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-400'
+              className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-400'
               value={formData.name}
               onChange={handleChange}
             />
@@ -122,7 +122,7 @@ export default function ContactPage() {
               id='email'
               name='email'
               placeholder='yourname@example.com'
-              className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-400'
+              className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-400'
               value={formData.email}
               onChange={handleChange}
             />
@@ -136,7 +136,7 @@ export default function ContactPage() {
               name='message'
               placeholder='Type your message here'
               rows='5'
-              className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-400'
+              className='w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-400'
               aria-label='Pesan Anda'
               value={formData.message}
               onChange={handleChange}
@@ -144,7 +144,7 @@ export default function ContactPage() {
           </div>
           <button
             type='submit'
-            className='bg-teal-400 hover:bg-teal-500 text-white font-bold py-3 px-6 rounded-lg w-full'
+            className='bg-sky-400 hover:bg-sky-500 text-white font-bold py-3 px-6 rounded-lg w-full'
             disabled={isLoading}
           >
             {isLoading ? 'Mengirim...' : 'Kirim Pesan'}

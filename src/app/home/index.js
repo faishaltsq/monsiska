@@ -94,16 +94,16 @@ export default function Home () {
             alt='Monsiska MI Logo'
             priority
           />
-          <h1 className='text-2xl font-bold text-teal-900 '>onsiska MI</h1>
+          <h1 className='text-2xl font-bold text-sky-900 '>onsiska MI</h1>
         </div>
-        <h2 className='text-justify text-lg text-teal-900 mt-5 mb-4'>
+        <h2 className='text-justify text-lg text-sky-900 mt-5 mb-4'>
           Jasa Konsultan Manajemen Mutu untuk Rumah Sakit, Puskesmas, Klinik,
           dan Lembaga Pendidikan. Melayani dengan Profesional dan Performa yang
           maksimal untuk kebutuhan yang lebih efisien.
         </h2>
         <div className='flex justify-center'>
           <Image
-            src='/images/konsultan.png'
+            src='/images/IMG-20250716-WA0009.jpg'
             width={750}
             height={750}
             alt='Consultant Image'
@@ -112,7 +112,7 @@ export default function Home () {
           />
         </div>
         <div className='p-5'>
-          <p className='text-justify text-teal-800'>
+          <p className='text-justify text-sky-800'>
             Dunia standar dan regulasi, akreditasi, tes, dan sertifikasi tidak
             sesederhana itu. Tapi mereka membuat hidup dan bisnis jauh lebih
             efisien dan aman. Bagaimana Monsiska MI menguji? Apa yang diperiksa
@@ -133,10 +133,10 @@ export default function Home () {
                   key={index}
                   className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'
                 >
-                  <h3 className='text-lg font-bold text-teal-900 mb-2'>
+                  <h3 className='text-lg font-bold text-sky-900 mb-2'>
                     {service.title}
                   </h3>
-                  <p className='text-teal-800'>{service.description}</p>
+                  <p className='text-sky-800'>{service.description}</p>
                 </div>
               ))}
             </div>
@@ -160,11 +160,11 @@ export default function Home () {
                       height={30}
                       alt={consultation.title}
                     />
-                    <h3 className='text-lg ml-2 font-bold text-teal-900 mb-2'>
+                    <h3 className='text-lg ml-2 font-bold text-sky-900 mb-2'>
                       {consultation.title}
                     </h3>
                   </div>
-                  <p className='text-teal-900'>{consultation.description}</p>
+                  <p className='text-sky-900'>{consultation.description}</p>
                 </div>
               ))}
             </div>
@@ -180,7 +180,7 @@ export default function Home () {
                 alt='Research Image'
                 className='mr-3'
               />
-              <h1 className='text-3xl font-bold text-teal-900'>
+              <h1 className='text-3xl font-bold text-sky-900'>
                 Konsultasi Penelitian Dengan Jenis Metodenya
               </h1>
             </div>
@@ -214,7 +214,7 @@ export default function Home () {
                 alt='spss statistik'
                 className='mr-3'
               />
-              <h1 className='text-3xl font-bold text-teal-900'>
+              <h1 className='text-3xl font-bold text-sky-900'>
                 Statistik & Analisis Data
               </h1>
             </div>
@@ -234,7 +234,7 @@ export default function Home () {
       <div className='lg:w-1/4 pl-5 mt-10 lg:mt-0'>
         <div className='grid grid-cols-1 gap-4'>
           <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'>
-            <h2 className='font-semibold text-xl text-teal-900'>
+            <h2 className='font-semibold text-xl text-sky-900'>
               Ingin Bertanya?
             </h2>
             <Image
@@ -244,12 +244,12 @@ export default function Home () {
               alt='Question Image'
               className='rounded-full p-3 hover:scale-105 transition-transform'
             />
-            <p className='text-justify text-teal-800'>
+            <p className='text-justify text-sky-800'>
               Ayo Konsultasikan Penelitianmu dengan kami!
             </p>
             <a
               href='https://wa.me/6281329796998'
-              className='bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-2xl mt-4 block text-center'
+              className='bg-sky-400 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded-2xl mt-4 block text-center'
             >
               Konsultasi Gratis!
             </a>
@@ -259,10 +259,10 @@ export default function Home () {
               key={index}
               className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'
             >
-              <h2 className='font-semibold text-xl text-teal-900'>
+              <h2 className='font-semibold text-xl text-sky-900'>
                 {info.title}
               </h2>
-              <ul className='list-disc pl-5 space-y-1 mt-2 text-teal-800'>
+              <ul className='list-disc pl-5 space-y-1 mt-2 text-sky-800'>
                 {info.content.map((content, index) => (
                   <li key={index}>{content}</li>
                 ))}
@@ -270,7 +270,7 @@ export default function Home () {
             </div>
           ))}
           <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'>
-            <h2 className='font-semibold text-xl text-teal-900'>
+            <h2 className='font-semibold text-xl text-sky-900'>
               Dosen Yang akan membantu anda
             </h2>
             <div className='grid grid-cols-1 gap-4'>
@@ -282,19 +282,19 @@ export default function Home () {
                   alt='Basirun'
                   className='rounded-full p-3'
                 />
-                <h3 className='text-lg font-semibold text-teal-900'>
+                <h3 className='text-lg font-semibold text-sky-900'>
                 Dr. H. Muhammad Basirun Al Ummah, M.Kes.
                 </h3>
-                <p className='text-teal-800'>
+                <p className='text-sky-800'>
                   Dosen Kesehatan dan manajemen Universitas Muhammadiyah Gombong
                 </p>
               </div>
             </div>
             <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300 mt-4'>
-              <h2 className='font-semibold text-xl text-teal-900'>
+              <h2 className='font-semibold text-xl text-sky-900'>
                 Office Address
               </h2>
-              <ul className='list-disc pl-5 space-y-1 mt-2 text-teal-900'>
+              <ul className='list-disc pl-5 space-y-1 mt-2 text-sky-900'>
                 <li>
                   <strong>Kebumen:</strong> Jl. Candiwulan Ds Mangli RT 01/ RW
                   01, Kec. Kuwarasan, Kebumen-Jawa Tengah 54366
