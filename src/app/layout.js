@@ -9,7 +9,7 @@ const robotoSlab = Roboto_Slab({
 
 export const metadata = {
   title: "Jasa Konsultasi dan Workshop | Monsiskami",
-  description: "Monsiskami adalah penyedia jasa konsultan penelitian, skripsi, tesis, dan disertasi terpercaya di Indonesia. Kami juga menyediakan pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
+  description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian, skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
   keywords: "monsiskami, konsultan penelitian, jasa skripsi, bimbingan tesis, konsultasi disertasi, pelatihan SPSS, konsultasi statistik, ISO 9001, akreditasi, manajemen mutu, workshop",
   authors: [{ name: "Monsiskami" }],
   creator: "Monsiskami",
@@ -20,7 +20,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Jasa Konsultasi dan Workshop | Monsiskami",
-    description: "Monsiskami adalah penyedia jasa konsultan penelitian, skripsi, tesis, dan disertasi terpercaya di Indonesia. Kami juga menyediakan pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
+    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian, skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
     url: "https://monsiskami.com",
     siteName: "Monsiskami",
     images: [
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Jasa Konsultasi dan Workshop | Monsiskami",
-    description: "Monsiskami adalah penyedia jasa konsultan penelitian, skripsi, tesis, dan disertasi terpercaya di Indonesia. Kami juga menyediakan pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
+    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian, skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
     images: ["/images/MONSISKAMI-removebg-preview.png"],
   },
   robots: {
