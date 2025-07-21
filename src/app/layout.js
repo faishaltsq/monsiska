@@ -8,9 +8,9 @@ const robotoSlab = Roboto_Slab({
 });
 
 export const metadata = {
-  title: "Jasa Konsultasi dan Workshop | Monsiskami",
-  description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian, skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
-  keywords: "monsiskami, konsultan penelitian, jasa skripsi, bimbingan tesis, konsultasi disertasi, pelatihan SPSS, konsultasi statistik, ISO 9001, akreditasi, manajemen mutu, workshop",
+  title: "Jasa Konsultasi dan Workshop Penelitian SPSS | Monsiskami",
+  description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015 terpercaya.",
+  keywords: "monsiskami, konsultasi penelitian, workshop SPSS, jasa skripsi, bimbingan tesis, konsultasi disertasi, pelatihan SPSS, konsultasi statistik, ISO 9001, akreditasi, manajemen mutu, workshop penelitian",
   authors: [{ name: "Monsiskami" }],
   creator: "Monsiskami",
   publisher: "Monsiskami",
@@ -19,8 +19,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Jasa Konsultasi dan Workshop | Monsiskami",
-    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian, skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
+    title: "Jasa Konsultasi dan Workshop Penelitian SPSS | Monsiskami",
+    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015 terpercaya.",
     url: "https://monsiskami.com",
     siteName: "Monsiskami",
     images: [
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jasa Konsultasi dan Workshop | Monsiskami",
-    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian, skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
+    title: "Jasa Konsultasi dan Workshop Penelitian SPSS | Monsiskami",
+    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015 terpercaya.",
     images: ["/images/MONSISKAMI-removebg-preview.png"],
   },
   robots: {
@@ -72,6 +72,8 @@ export default function RootLayout({ children }) {
         <meta name="rating" content="general" />
         <meta name="distribution" content="global" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="last-modified" content={new Date().toISOString()} />
+        <meta name="article:modified_time" content={new Date().toISOString()} />
         <link rel="canonical" href="https://monsiskami.com" />
         <script
           type="application/ld+json"
@@ -80,14 +82,19 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Monsiskami",
-              "description": "Konsultan penelitian, skripsi, tesis, disertasi, dan manajemen mutu terpercaya",
+              "alternateName": "Jasa Konsultasi dan Workshop Monsiskami",
+              "description": "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian, skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015",
               "url": "https://monsiskami.com",
               "logo": "https://monsiskami.com/images/MONSISKAMI-removebg-preview.png",
+              "slogan": "Jasa Konsultasi dan Workshop Profesional",
+              "foundingDate": "2018",
+              "keywords": "konsultasi, workshop, penelitian, skripsi, tesis, SPSS, statistik, ISO 9001",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+62-811-7784-099",
                 "contactType": "customer service",
-                "email": "monsiskami@gmail.com"
+                "email": "monsiskami@gmail.com",
+                "availableLanguage": "Indonesian"
               },
               "address": {
                 "@type": "PostalAddress",
@@ -96,7 +103,12 @@ export default function RootLayout({ children }) {
               },
               "sameAs": [
                 "https://wa.me/628117784099"
-              ]
+              ],
+              "offers": {
+                "@type": "Offer",
+                "category": "Jasa Konsultasi dan Workshop",
+                "description": "Layanan konsultasi penelitian dan workshop SPSS"
+              }
             })
           }}
         />
