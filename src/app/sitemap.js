@@ -1,22 +1,25 @@
 export default function sitemap() {
+  const baseUrl = 'https://monsiskami.com';
+  const currentDate = new Date().toISOString();
+  
   return [
     {
-      url: 'https://monsiskami.com',
-      lastModified: new Date(),
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/portfolio`,
+      lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://monsiskami.com/portfolio',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://monsiskami.com/contact',
-      lastModified: new Date(),
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
-  ]
+  ];
 }

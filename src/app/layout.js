@@ -74,6 +74,12 @@ export default function RootLayout({ children }) {
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="last-modified" content={new Date().toISOString()} />
         <meta name="article:modified_time" content={new Date().toISOString()} />
+        <meta name="cache-control" content="no-cache, no-store, must-revalidate" />
+        <meta name="pragma" content="no-cache" />
+        <meta name="expires" content="0" />
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
         <link rel="canonical" href="https://monsiskami.com" />
         <script
           type="application/ld+json"
@@ -88,6 +94,8 @@ export default function RootLayout({ children }) {
               "logo": "https://monsiskami.com/images/MONSISKAMI-removebg-preview.png",
               "slogan": "Jasa Konsultasi dan Workshop Profesional",
               "foundingDate": "2018",
+              "dateModified": new Date().toISOString(),
+              "lastReviewed": new Date().toISOString(),
               "keywords": "konsultasi, workshop, penelitian, skripsi, tesis, SPSS, statistik, ISO 9001",
               "contactPoint": {
                 "@type": "ContactPoint",
@@ -107,7 +115,13 @@ export default function RootLayout({ children }) {
               "offers": {
                 "@type": "Offer",
                 "category": "Jasa Konsultasi dan Workshop",
-                "description": "Layanan konsultasi penelitian dan workshop SPSS"
+                "description": "Layanan konsultasi penelitian dan workshop SPSS",
+                "validFrom": new Date().toISOString()
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://monsiskami.com/?search={search_term_string}",
+                "query-input": "required name=search_term_string"
               }
             })
           }}
