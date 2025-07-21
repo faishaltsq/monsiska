@@ -10,7 +10,7 @@ const robotoSlab = Roboto_Slab({
 export const metadata = {
   title: "Jasa Konsultasi dan Workshop | Monsiskami",
   description: "Monsiskami adalah penyedia jasa konsultan penelitian, skripsi, tesis, dan disertasi terpercaya di Indonesia. Kami juga menyediakan pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015.",
-  keywords: "monsiskami, konsultan penelitian, jasa skripsi, bimbingan tesis, konsultasi disertasi, pelatihan SPSS, konsultasi statistik, ISO 9001, akreditasi, manajemen mutu",
+  keywords: "monsiskami, konsultan penelitian, jasa skripsi, bimbingan tesis, konsultasi disertasi, pelatihan SPSS, konsultasi statistik, ISO 9001, akreditasi, manajemen mutu, workshop",
   authors: [{ name: "Monsiskami" }],
   creator: "Monsiskami",
   publisher: "Monsiskami",
@@ -54,9 +54,10 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'google-site-verification-code', // Ganti dengan kode verifikasi Google Search Console
+    google: 'google-site-verification-code', // Ganti dengan kode verifikasi Google Search Console  
   },
   icons: "/images/MONSISKAMI-removebg-preview.png",
+  // Updated metadata for improved SEO - January 2025
 };
 
 export default function RootLayout({ children }) {
