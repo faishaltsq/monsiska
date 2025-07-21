@@ -75,7 +75,7 @@ export default function ContactPage() {
               rel='noopener noreferrer'
               className='text-sky-900 hover:underline underline'
             >
-              +62 811-7784-099 (Halo Monsiska MI)
+              +62 811-7784-099 (Halo MONSISKAMI)
             </a>
           </div>
           <div className='flex flex-col items-center'>

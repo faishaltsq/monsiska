@@ -1,6 +1,36 @@
 import React from 'react'
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'Portfolio Monsiskami - Lebih dari 5 Tahun Berpengalaman',
+  description: 'Lihat portfolio Monsiskami dalam memberikan jasa konsultasi penelitian, pelatihan akreditasi, dan manajemen mutu. Lebih dari 5 tahun melayani berbagai klien di Indonesia.',
+  keywords: 'portfolio monsiskami, pengalaman konsultan, hasil kerja konsultasi, pelatihan akreditasi, manajemen mutu, seminar',
+  openGraph: {
+    title: 'Portfolio Monsiskami - Lebih dari 5 Tahun Berpengalaman',
+    description: 'Lihat portfolio Monsiskami dalam memberikan jasa konsultasi penelitian, pelatihan akreditasi, dan manajemen mutu.',
+    url: 'https://monsiskami.com/portfolio',
+    siteName: 'Monsiskami',
+    images: [
+      {
+        url: '/images/seminar-rs.png',
+        width: 800,
+        height: 600,
+        alt: 'Portfolio Monsiskami',
+      },
+    ],
+    locale: 'id_ID',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+}
+
 // New PortfolioItem component
 const PortfolioItem = ({ item }) => (
   <div className='bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition duration-300'>
@@ -62,37 +92,37 @@ const portfolioItems = [
     id: 5,
     image: '/images/portfolio1.jpg',
     height: 300,
-    title: 'Monsiska MI'
+    title: 'MONSISKAMI'
   },
   {
     id: 6,
     image: '/images/portfolio2.jpg',
     height: 300,
-    title: 'Monsiska MI'
+    title: 'MONSISKAMI'
   },
   {
     id: 7,
     image: '/images/portfolio3.jpg',
     height: 300,
-    title: 'Monsiska MI'
+    title: 'MONSISKAMI'
   },
   {
     id: 8,
     image: '/images/portfolio4.jpg',
     height: 300,
-    title: 'Monsiska MI'
+    title: 'MONSISKAMI'
   },
   {
     id: 9,
     image: '/images/portfolio5.jpg',
     height: 500,
-    title: 'Monsiska MI'
+    title: 'MONSISKAMI'
   },
   {
     id: 10,
     image: '/images/portfolio6.jpg',
     height: 500,
-    title: 'Monsiska MI'
+    title: 'MONSISKAMI'
   }
 ]
 

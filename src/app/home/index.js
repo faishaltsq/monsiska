@@ -56,7 +56,7 @@ const additionalInfo = [
     ]
   },
   {
-    title: 'Di Monsiska MI Bisa Konsultasi Apa?',
+    title: 'Di MONSISKAMI Bisa Konsultasi Apa?',
     content: [
       'Judul Penelitian',
       'Metode Penelitian',
@@ -91,10 +91,10 @@ export default function Home () {
             src='/images/MONSISKAMI-removebg-preview.png'
             width={30}
             height={20}
-            alt='Monsiska MI Logo'
+            alt='MONSISKAMI Logo'
             priority
           />
-          <h1 className='text-2xl font-bold text-sky-900 '>onsiska MI</h1>
+          <h1 className='text-2xl font-bold text-sky-900 '>ONSISKAMI</h1>
         </div>
         <h2 className='text-justify text-lg text-sky-900 mt-5 mb-4'>
           Jasa Konsultan Manajemen Mutu untuk Rumah Sakit, Puskesmas, Klinik,
@@ -115,8 +115,8 @@ export default function Home () {
           <p className='text-justify text-sky-800'>
             Dunia standar dan regulasi, akreditasi, tes, dan sertifikasi tidak
             sesederhana itu. Tapi mereka membuat hidup dan bisnis jauh lebih
-            efisien dan aman. Bagaimana Monsiska MI menguji? Apa yang diperiksa
-            oleh Monsiska MI? Anda akan menemukan jawaban di sini.
+            efisien dan aman. Bagaimana MONSISKAMI menguji? Apa yang diperiksa
+            oleh MONSISKAMI? Anda akan menemukan jawaban di sini.
           </p>
         </div>
         <section
