@@ -97,9 +97,9 @@ export default function Home () {
           <h1 className='text-2xl font-bold text-sky-900 '>ONSISKAMI</h1>
         </div>
         <h2 className='text-justify text-lg text-sky-900 mt-5 mb-4'>
-          Jasa Konsultan Manajemen Mutu untuk Rumah Sakit, Puskesmas, Klinik,
-          dan Lembaga Pendidikan. Melayani dengan Profesional dan Performa yang
-          maksimal untuk kebutuhan yang lebih efisien.
+          Monsiskami adalah penyedia jasa konsultan penelitian, skripsi, 
+          tesis, dan disertasi terpercaya di Indonesia. Kami juga menyediakan pelatihan SPSS, konsultasi statistik, 
+          dan sertifikasi ISO 9001:2015.
         </h2>
         <div className='flex justify-center'>
           <Image
