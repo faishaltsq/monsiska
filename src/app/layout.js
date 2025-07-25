@@ -8,9 +8,9 @@ const robotoSlab = Roboto_Slab({
 });
 
 export const metadata = {
-  title: "Jasa Konsultasi dan Workshop Penelitian SPSS | Monsiskami",
-  description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015 terpercaya.",
-  keywords: "monsiskami, konsultasi penelitian, workshop SPSS, jasa skripsi, bimbingan tesis, konsultasi disertasi, pelatihan SPSS, konsultasi statistik, ISO 9001, akreditasi, manajemen mutu, workshop penelitian",
+  title: "Jasa Konsultan Dan Workshop | Monsiskami",
+  description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk Manajemen Bisnis, Penelitian dan Yang lainnya.",
+  keywords: "monsiskami, konsultasi penelitian, workshop, jasa skripsi, bimbingan tesis, konsultasi disertasi, pelatihan SPSS, konsultasi statistik, ISO 9001, akreditasi, manajemen mutu, workshop penelitian",
   authors: [{ name: "Monsiskami" }],
   creator: "Monsiskami",
   publisher: "Monsiskami",
@@ -19,8 +19,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Jasa Konsultasi dan Workshop Penelitian SPSS | Monsiskami",
-    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015 terpercaya.",
+    title: "Jasa Konsultan dan Workshop | Monsiskami",
+    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk Manajemen Bisnis, Penelitian dan Yang lainnya.",
     url: "https://monsiskami.com",
     siteName: "Monsiskami",
     images: [
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jasa Konsultasi dan Workshop Penelitian SPSS | Monsiskami",
-    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk penelitian skripsi, tesis, disertasi, pelatihan SPSS, konsultasi statistik, dan sertifikasi ISO 9001:2015 terpercaya.",
+    title: "Jasa Konsultan Dan Workshop | Monsiskami",
+    description: "Monsiskami menyediakan jasa konsultasi dan workshop profesional untuk Manajemen Bisnis, Penelitian dan Yang lainnya.",
     images: ["/images/MONSISKAMI-removebg-preview.png"],
   },
   robots: {

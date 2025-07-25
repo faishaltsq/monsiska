@@ -59,7 +59,7 @@ export default function ContactPage() {
           informasi di bawah ini atau kirimkan pesan langsung melalui form
           kontak.
         </p>
-        <div className='grid md:grid-cols-2 gap-8 mb-12'>
+        <div className='grid md:grid-cols-3 gap-8 mb-12'>
           <div className='flex flex-col items-center'>
             <Image
               src='/images/contact-phone.png'
@@ -75,7 +75,7 @@ export default function ContactPage() {
               rel='noopener noreferrer'
               className='text-sky-900 hover:underline underline'
             >
-              +62 811-7784-099 (Halo MONSISKAMI)
+              +62 811-7784-099
             </a>
           </div>
           <div className='flex flex-col items-center'>
@@ -94,6 +94,24 @@ export default function ContactPage() {
               className='text-sky-900 hover:underline underline'
             >
               monsiskami@gmail.com
+            </a>
+          </div>
+          <div className='flex flex-col items-center'>
+            <Image
+              src='/images/contact-instagram.svg'
+              alt='instagram'
+              width={100}
+              height={100}
+              className='mb-4'
+            />
+            <h2 className='text-xl font-semibold text-sky-500 mb-2'>Instagram</h2>
+            <a
+              href='https://www.instagram.com/monsiskami/profilecard/?igsh=MWI2MXM2bzA2MDY1NA=='
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-sky-900 hover:underline underline'
+            >
+              Monsiskami
             </a>
           </div>
         </div>
