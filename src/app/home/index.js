@@ -383,7 +383,7 @@ export default function Home () {
                     <span key={i} className='text-yellow-400 text-lg'>★</span>
                   ))}
                 </div>
-                <p className='text-gray-700 mb-4 text-sm italic'>"{testimonial.content}"</p>
+                <p className='text-gray-700 mb-4 text-sm italic'>&quot;{testimonial.content}&quot;</p>
                 <div className='border-t pt-4'>
                   <p className='font-bold text-[#1a3a52]'>{testimonial.name}</p>
                   <p className='text-sm text-gray-600'>{testimonial.role}</p>
