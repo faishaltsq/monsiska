@@ -9,8 +9,9 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: 'Tidak ada file yang diunggah' }), { status: 400 })
     }
 
-    // Gunakan Vercel Blob untuk menyimpan file. Wajib mengisi access: 'public'.
-    const blob = await put(file.name, file, { access: 'public' })
+    // Gunakan Vercel Blob untuk menyimpan file. public access.
+    // addRandomSuffix mencegah error jika file dengan nama yang sama diunggah ulang
+    const blob = await put(file.name, file, { access: 'public', addRandomSuffix: true })
 
     return new Response(JSON.stringify({ 
       url: blob.url,
