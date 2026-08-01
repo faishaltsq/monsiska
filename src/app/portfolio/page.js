@@ -178,7 +178,7 @@ const Portfolio = () => {
       {/* CTA Section */}
       <section className='py-16 px-4 bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white'>
         <div className='container mx-auto max-w-7xl text-center'>
-          <h2 className='text-3xl font-bold mb-4'>Tertarik Bekerja Sama?</h2>
+          <h2 className='text-3xl font-bold mb-4 text-white'>Tertarik Bekerja Sama?</h2>
           <p className='text-gray-200 mb-8 max-w-2xl mx-auto'>
             Hubungi kami hari ini untuk mendiskusikan kebutuhan penelitian dan konsultasi Anda
           </p>
