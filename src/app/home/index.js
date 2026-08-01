@@ -174,11 +174,11 @@ export default function Home () {
       <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-20 px-4'>
         <div className='container mx-auto max-w-7xl'>
           <div className='grid md:grid-cols-2 gap-12 items-center'>
-            <div>
-              <h1 className='text-4xl md:text-5xl font-bold mb-6 leading-tight'>
-                Solusi Konsultasi Penelitian dan Statistik Terpercaya
-              </h1>
-              <p className='text-lg text-gray-200 mb-8'>
+              <div>
+                <h1 className='text-4xl md:text-5xl font-bold mb-6 leading-tight text-white'>
+                  Solusi Konsultasi Penelitian dan Statistik Terpercaya
+                </h1>
+                <p className='text-lg text-gray-200 mb-8'>
                 Kami membantu Anda dalam penyelesaian penelitian, analisis statistik, dan sertifikasi manajemen mutu dengan profesionalisme tinggi.
               </p>
               <a

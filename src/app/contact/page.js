@@ -53,12 +53,12 @@ export default function ContactPage() {
   return (
     <div className='pt-20'>
       {/* Hero Section */}
-      <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-16 px-4'>
-        <div className='container mx-auto max-w-7xl'>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Hubungi Kami</h1>
-          <p className='text-lg text-gray-200'>Kami siap membantu Anda mencapai kesuksesan penelitian</p>
-        </div>
-      </section>
+        <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-16 px-4'>
+          <div className='container mx-auto max-w-7xl'>
+            <h1 className='text-4xl md:text-5xl font-bold mb-4 text-white'>Hubungi Kami</h1>
+            <p className='text-lg text-gray-200'>Kami siap membantu Anda mencapai kesuksesan penelitian</p>
+          </div>
+        </section>
 
       <div className='py-16 px-4 bg-white'>
         <div className='container mx-auto max-w-7xl'>

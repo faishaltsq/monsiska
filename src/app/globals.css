@@ -43,9 +43,11 @@ body {
 
 /* Typography Enhancements */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--primary-dark);
   font-weight: 700;
   line-height: 1.2;
+}
+h1:not(.text-white), h2:not(.text-white), h3:not(.text-white), h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
+  color: var(--primary-dark);
 }
 
 h1 {

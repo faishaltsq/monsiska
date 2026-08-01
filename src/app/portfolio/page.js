@@ -131,9 +131,9 @@ const Portfolio = () => {
     <div className='pt-24 pb-16'>
       {/* Hero Section */}
       <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-16 px-4'>
-        <div className='container mx-auto max-w-7xl'>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Portofolio Kami</h1>
-          <p className='text-lg text-gray-200'>Lebih dari 5 tahun membantu klien mencapai kesuksesan</p>
+          <div className='container mx-auto max-w-7xl'>
+            <h1 className='text-4xl md:text-5xl font-bold mb-4 text-white'>Portofolio Kami</h1>
+            <p className='text-lg text-gray-200'>Lebih dari 5 tahun membantu klien mencapai kesuksesan</p>
         </div>
       </section>
 

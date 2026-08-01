@@ -37,7 +37,7 @@ export default function Blog() {
       {/* Hero Section */}
       <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-16 px-4'>
         <div className='container mx-auto max-w-7xl'>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Resources & Edukasi</h1>
+          <h1 className='text-4xl md:text-5xl font-bold mb-4 text-white'>Resources & Edukasi</h1>
           <p className='text-lg text-gray-200'>Tips, tutorial, dan panduan lengkap untuk meningkatkan kualitas penelitian Anda</p>
         </div>
       </section>
