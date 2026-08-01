@@ -33,21 +33,21 @@ export const metadata = {
 
 // New PortfolioItem component
 const PortfolioItem = ({ item }) => (
-  <div className='bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition duration-300'>
-    <Image
-      src={item.image}
-      alt={item.title || 'Portfolio Image'}
-      layout='responsive'
-      width={500}
-      height={item.height || 300}
-      className='w-full object-cover'
-      loading='lazy'
-    />
-    <div className='p-5'>
-      <h3 className='text-xl font-semibold text-sky-900 mb-2'>
+  <div className='bg-white rounded-lg shadow-sm hover:shadow-lg transition duration-300 overflow-hidden border border-gray-100'>
+    <div className='relative overflow-hidden h-48 bg-gray-100'>
+      <Image
+        src={item.image}
+        alt={item.title || 'Portfolio Image'}
+        fill
+        className='w-full h-full object-cover hover:scale-105 transition duration-300'
+        loading='lazy'
+      />
+    </div>
+    <div className='p-6'>
+      <h3 className='text-lg font-bold text-[#1a3a52] mb-2'>
         {item.title}
       </h3>
-      {item.description && <p className='text-gray-600 mb-4'>{item.description}</p>}
+      {item.description && <p className='text-gray-600 text-sm leading-relaxed'>{item.description}</p>}
     </div>
   </div>
 )
@@ -128,25 +128,65 @@ const portfolioItems = [
 
 const Portfolio = () => {
   return (
-    <div className='pt-28 p-10 bg-gray-50 min-h-screen'>
-      <h1 className='text-3xl font-bold text-center mb-8 text-sky-500'>Portofolio Kami</h1>
-      <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 container mx-auto'>
-        {portfolioItems.slice(0, 4).map(item => (
-          <PortfolioItem key={item.id} item={item} />
-        ))}
-      </div>
-      <div>
-        <h1 className='text-2xl font-bold text-center mb-8 mt-8 text-sky-500'>
-          Portofolio Kami selama lebih dari 5 tahun berdiri telah membantu banyak
-          klien dalam meningkatkan kualitas layanan dan produk mereka. Berikut
-          adalah beberapa portofolio kami yang telah berhasil kami kerjakan.
-        </h1>
-        <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 container mx-auto'>
-          {portfolioItems.slice(4).map(item => (
-            <PortfolioItem key={item.id} item={item} />
-          ))}
+    <div className='pt-24 pb-16'>
+      {/* Hero Section */}
+      <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-16 px-4'>
+        <div className='container mx-auto max-w-7xl'>
+          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Portofolio Kami</h1>
+          <p className='text-lg text-gray-200'>Lebih dari 5 tahun membantu klien mencapai kesuksesan</p>
         </div>
-      </div>
+      </section>
+
+      {/* Featured Portfolio */}
+      <section className='py-16 px-4 bg-white'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='text-center mb-12'>
+            <h2 className='text-3xl font-bold text-[#1a3a52] mb-4'>Proyek Unggulan</h2>
+            <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            {portfolioItems.slice(0, 4).map(item => (
+              <PortfolioItem key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Description Section */}
+      <section className='py-12 px-4 bg-gray-50'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='bg-white rounded-lg p-8 shadow-sm border-l-4 border-[#2563eb]'>
+            <p className='text-lg text-gray-700 text-center leading-relaxed'>
+              Selama lebih dari 5 tahun berdiri, Monsiskami telah membantu ratusan klien dalam meningkatkan kualitas layanan dan penelitian mereka. Tim profesional kami berkomitmen untuk memberikan solusi terbaik dengan metodologi yang tepat dan hasil yang terukur.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* All Portfolio Items */}
+      <section className='py-16 px-4 bg-white'>
+        <div className='container mx-auto max-w-7xl'>
+          <h2 className='text-3xl font-bold text-[#1a3a52] text-center mb-12'>Galeri Lengkap</h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {portfolioItems.slice(4).map(item => (
+              <PortfolioItem key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className='py-16 px-4 bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white'>
+        <div className='container mx-auto max-w-7xl text-center'>
+          <h2 className='text-3xl font-bold mb-4'>Tertarik Bekerja Sama?</h2>
+          <p className='text-gray-200 mb-8 max-w-2xl mx-auto'>
+            Hubungi kami hari ini untuk mendiskusikan kebutuhan penelitian dan konsultasi Anda
+          </p>
+          <a href='https://wa.me/628117784099' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'>
+            Hubungi Kami Sekarang
+          </a>
+        </div>
+      </section>
     </div>
   )
 }

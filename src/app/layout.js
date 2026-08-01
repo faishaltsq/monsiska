@@ -128,10 +128,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${robotoSlab.variable} antialiased bg-white text-black font-sans`}
+        className={`${robotoSlab.variable} antialiased bg-[#f8f9fa] text-[#1a1a1a] font-sans`}
       >
         <Navbar />
-        {children} {/* Ensure all child pages are rendered here */}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
