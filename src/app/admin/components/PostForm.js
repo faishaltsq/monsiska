@@ -7,6 +7,7 @@ import Link from 'next/link'
 export default function PostForm({ initialData = null, isEdit = false }) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+  const [uploading, setUploading] = useState(false)
   const [error, setError] = useState('')
   
   const [formData, setFormData] = useState({
@@ -38,6 +39,48 @@ export default function PostForm({ initialData = null, isEdit = false }) {
       slug: e.target.value.toLowerCase().replace(/[^a-z0-9-]+/g, ''),
       slug_manually_edited: true
     }))
+  }
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    setUploading(true)
+    setError('')
+
+    const uploadData = new FormData()
+    uploadData.append('file', file)
+
+    try {
+      const res = await fetch('/api/admin/upload', {
+        method: 'POST',
+        body: uploadData
+      })
+
+      if (res.ok) {
+        const data = await res.json()
+        const isImage = data.type.startsWith('image/')
+        // Format markdown: image pake ![], file PDF/dokumen pake []
+        const markdownTag = isImage 
+          ? `\n\n![${data.name}](${data.url})\n\n`
+          : `\n\n[Download File: ${data.name}](${data.url})\n\n`
+        
+        setFormData(prev => ({
+          ...prev,
+          content: prev.content + markdownTag
+        }))
+        
+        // Reset input file
+        e.target.value = ''
+      } else {
+        const data = await res.json()
+        setError(data.error || 'Gagal upload file')
+      }
+    } catch (err) {
+      setError('Terjadi kesalahan saat upload')
+    } finally {
+      setUploading(false)
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -142,9 +185,27 @@ export default function PostForm({ initialData = null, isEdit = false }) {
         </div>
 
         <div className="md:col-span-2">
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Konten (Gunakan Markdown: ## Heading 2, ### Heading 3, - List)
-          </label>
+          <div className="flex justify-between items-end mb-1">
+            <label className="block text-sm font-medium text-gray-700">
+              Konten (Gunakan Markdown: ## Heading 2, ### Heading 3, - List)
+            </label>
+            <div className="relative">
+              <input
+                type="file"
+                id="file-upload"
+                className="hidden"
+                onChange={handleFileUpload}
+                disabled={uploading}
+                accept="image/*,.pdf,.doc,.docx"
+              />
+              <label
+                htmlFor="file-upload"
+                className={`cursor-pointer inline-flex items-center px-3 py-1 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 ${uploading ? 'opacity-50 pointer-events-none' : ''}`}
+              >
+                {uploading ? 'Mengunggah...' : '+ Sisipkan Gambar/PDF'}
+              </label>
+            </div>
+          </div>
           <textarea
             required
             rows="15"

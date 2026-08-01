@@ -2,14 +2,16 @@
 
 Fitur blog sekarang sudah menggunakan database **Vercel Postgres (Neon)** dan memiliki dashboard admin khusus. Ikuti langkah ini untuk setup pertama kali.
 
-## 1. Setup Database di Vercel
+## 1. Setup Database & Storage di Vercel
 
 1. Buka dashboard project lo di [Vercel](https://vercel.com)
 2. Masuk ke tab **Storage**
 3. Klik **Create Database** -> pilih **Postgres** (akan otomatis menggunakan Neon di backend)
 4. Ikuti wizard sampai selesai.
-5. Setelah database terbuat, masuk ke tab **.env.local** di halaman database tersebut.
-6. Copy nilai `DATABASE_URL` (formatnya: `postgres://...`).
+5. Kembali ke tab **Storage**
+6. Klik **Create Database** (lagi) -> kali ini pilih **Blob**
+7. Ikuti wizard sampai selesai. (Ini untuk upload gambar & PDF di artikel)
+8. Setelah selesai, cek Environment Variables di pengaturan Vercel, pastikan ada `DATABASE_URL` (dan token BLOB otomatis terhubung).
 
 ## 2. Setup Environment Variables
 

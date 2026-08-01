@@ -35,6 +35,57 @@ export default function ArticleDetail() {
     fetchData()
   }, [params.slug])
 
+  // Helper untuk render inline markdown (link & image sederhana)
+  const renderInlineMarkdown = (text) => {
+    if (!text) return null
+    // Cek image: ![alt](url)
+    const imgRegex = /!\[(.*?)\]\((.*?)\)/g
+    // Cek link: [text](url) (setelah image diparse atau abaikan !)
+    const linkRegex = /\[(.*?)\]\((.*?)\)/g
+
+    let parts = []
+    let lastIndex = 0
+
+    // Kombinasi deteksi image dan link pake single pass regex lebih ribet, kita bikin dua pass atau split aja.
+    // Yang paling gampang buat react: nge-split string dengan regex yg capture group.
+    
+    // Tapi karena react butuh array of elements, bikin custom parser:
+    const tokenRegex = /(!?\[.*?\]\(.*?\))/g
+    const tokens = text.split(tokenRegex)
+
+    return tokens.map((token, i) => {
+      const imgMatch = token.match(/^!\[(.*?)\]\((.*?)\)$/)
+      if (imgMatch) {
+        return (
+          <img 
+            key={i} 
+            src={imgMatch[2]} 
+            alt={imgMatch[1]} 
+            className="max-w-full h-auto rounded-lg my-4 shadow-sm"
+            loading="lazy"
+          />
+        )
+      }
+      
+      const linkMatch = token.match(/^\[(.*?)\]\((.*?)\)$/)
+      if (linkMatch) {
+        return (
+          <a 
+            key={i} 
+            href={linkMatch[2]} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-[#2563eb] hover:underline break-words"
+          >
+            {linkMatch[1]}
+          </a>
+        )
+      }
+
+      return <React.Fragment key={i}>{token}</React.Fragment>
+    })
+  }
+
   if (loading) {
     return <div className="min-h-screen pt-24 text-center">Loading...</div>
   }
@@ -79,49 +130,49 @@ export default function ArticleDetail() {
         <div className='container mx-auto max-w-4xl'>
           <article className='prose prose-lg max-w-none'>
             <div className='text-gray-700 leading-relaxed space-y-6'>
-              {article.content.split('\n\n').map((paragraph, index) => {
-                if (paragraph.startsWith('##')) {
-                  return (
-                    <h2 key={index} className='text-2xl font-bold text-[#1a3a52] mt-8 mb-4'>
-                      {paragraph.replace(/^##\s*/, '')}
-                    </h2>
-                  )
-                } else if (paragraph.startsWith('###')) {
-                  return (
-                    <h3 key={index} className='text-xl font-bold text-[#2d5a7b] mt-6 mb-3'>
-                      {paragraph.replace(/^###\s*/, '')}
-                    </h3>
-                  )
-                } else if (paragraph.trim() === '') {
-                  return null
-                } else if (paragraph.startsWith('- ')) {
-                  return (
-                    <ul key={index} className='list-disc pl-6 space-y-2'>
-                      {paragraph.split('\n').map((item, i) => (
-                        <li key={i} className='text-gray-700'>
-                          {item.replace(/^-\s*/, '')}
-                        </li>
-                      ))}
-                    </ul>
-                  )
-                } else if (paragraph.match(/^\d+\./)) {
-                  return (
-                    <ol key={index} className='list-decimal pl-6 space-y-2'>
-                      {paragraph.split('\n').map((item, i) => (
-                        <li key={i} className='text-gray-700'>
-                          {item.replace(/^\d+\.\s*/, '')}
-                        </li>
-                      ))}
-                    </ol>
-                  )
-                } else {
-                  return (
-                    <p key={index} className='text-gray-700 leading-relaxed'>
-                      {paragraph}
-                    </p>
-                  )
-                }
-              })}
+                {article.content.split('\n\n').map((paragraph, index) => {
+                  if (paragraph.startsWith('##')) {
+                    return (
+                      <h2 key={index} className='text-2xl font-bold text-[#1a3a52] mt-8 mb-4'>
+                        {renderInlineMarkdown(paragraph.replace(/^##\s*/, ''))}
+                      </h2>
+                    )
+                  } else if (paragraph.startsWith('###')) {
+                    return (
+                      <h3 key={index} className='text-xl font-bold text-[#2d5a7b] mt-6 mb-3'>
+                        {renderInlineMarkdown(paragraph.replace(/^###\s*/, ''))}
+                      </h3>
+                    )
+                  } else if (paragraph.trim() === '') {
+                    return null
+                  } else if (paragraph.startsWith('- ')) {
+                    return (
+                      <ul key={index} className='list-disc pl-6 space-y-2'>
+                        {paragraph.split('\n').map((item, i) => (
+                          <li key={i} className='text-gray-700'>
+                            {renderInlineMarkdown(item.replace(/^-\s*/, ''))}
+                          </li>
+                        ))}
+                      </ul>
+                    )
+                  } else if (paragraph.match(/^\d+\./)) {
+                    return (
+                      <ol key={index} className='list-decimal pl-6 space-y-2'>
+                        {paragraph.split('\n').map((item, i) => (
+                          <li key={i} className='text-gray-700'>
+                            {renderInlineMarkdown(item.replace(/^\d+\.\s*/, ''))}
+                          </li>
+                        ))}
+                      </ol>
+                    )
+                  } else {
+                    return (
+                      <p key={index} className='text-gray-700 leading-relaxed'>
+                        {renderInlineMarkdown(paragraph)}
+                      </p>
+                    )
+                  }
+                })}
             </div>
           </article>
 
