@@ -1,14 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import 'react-quill/dist/quill.snow.css'
+
+// Disable SSR untuk ReactQuill karena butuh objek window
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false, loading: () => <p>Loading editor...</p> })
 
 export default function PostForm({ initialData = null, isEdit = false }) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState('')
+  const quillRef = useRef(null)
   
   const [formData, setFormData] = useState({
     title: initialData?.title || '',
@@ -41,6 +47,72 @@ export default function PostForm({ initialData = null, isEdit = false }) {
     }))
   }
 
+  // --- Image Upload Custom Handler untuk Quill ---
+  const imageHandler = () => {
+    const input = document.createElement('input')
+    input.setAttribute('type', 'file')
+    input.setAttribute('accept', 'image/*')
+    input.click()
+
+    input.onchange = async () => {
+      const file = input.files[0]
+      if (!file) return
+
+      setUploading(true)
+      const uploadData = new FormData()
+      uploadData.append('file', file)
+
+      try {
+        const res = await fetch('/api/admin/upload', {
+          method: 'POST',
+          body: uploadData
+        })
+
+        if (res.ok) {
+          const data = await res.json()
+          const editor = quillRef.current?.getEditor()
+          if (editor) {
+            const range = editor.getSelection()
+            const cursorPosition = range ? range.index : 0
+            // Sisipkan gambar
+            editor.insertEmbed(cursorPosition, 'image', data.url)
+            // Majukan cursor setelah gambar
+            editor.setSelection(cursorPosition + 1)
+          }
+        } else {
+          alert('Gagal mengunggah gambar')
+        }
+      } catch (err) {
+        alert('Terjadi kesalahan jaringan saat upload gambar')
+      } finally {
+        setUploading(false)
+      }
+    }
+  }
+
+  // Quill Toolbar Config (useMemo mencegah re-render konstan)
+  const modules = useMemo(() => ({
+    toolbar: {
+      container: [
+        [{ header: [2, 3, 4, false] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        ['link', 'image'],
+        ['clean']
+      ],
+      handlers: {
+        image: imageHandler
+      }
+    }
+  }), [])
+
+  const formats = [
+    'header',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet',
+    'link', 'image'
+  ]
+
   const handleFileUpload = async (e) => {
     const file = e.target.files?.[0]
     if (!file) return
@@ -57,17 +129,18 @@ export default function PostForm({ initialData = null, isEdit = false }) {
         body: uploadData
       })
 
-      if (res.ok) {
+        if (res.ok) {
         const data = await res.json()
         const isImage = data.type.startsWith('image/')
-        // Format markdown: image pake ![], file PDF/dokumen pake []
-        const markdownTag = isImage 
-          ? `\n\n![${data.name}](${data.url})\n\n`
-          : `\n\n[Download File: ${data.name}](${data.url})\n\n`
+        
+        // Format ke HTML karena sekarang pakai Quill
+        const htmlTag = isImage 
+          ? `<p><br><img src="${data.url}" alt="${data.name}" /><br></p>`
+          : `<p><br><a href="${data.url}" target="_blank" rel="noopener noreferrer" style="color: blue; text-decoration: underline;">[Download File: ${data.name}]</a><br></p>`
         
         setFormData(prev => ({
           ...prev,
-          content: prev.content + markdownTag
+          content: prev.content + htmlTag
         }))
         
         // Reset input file
@@ -185,10 +258,9 @@ export default function PostForm({ initialData = null, isEdit = false }) {
         </div>
 
         <div className="md:col-span-2">
-          <div className="flex justify-between items-end mb-1">
+          <div className="flex justify-between items-end mb-2">
             <label className="block text-sm font-medium text-gray-700">
-              Konten (Markdown Support: ## Judul, - List, Tabel dll) 
-              <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" className="text-blue-500 ml-2 hover:underline text-xs">(Panduan Markdown)</a>
+              Konten Artikel (Editor)
             </label>
             <div className="relative">
               <input
@@ -197,23 +269,27 @@ export default function PostForm({ initialData = null, isEdit = false }) {
                 className="hidden"
                 onChange={handleFileUpload}
                 disabled={uploading}
-                accept="image/*,.pdf,.doc,.docx"
+                accept=".pdf,.doc,.docx"
               />
               <label
                 htmlFor="file-upload"
                 className={`cursor-pointer inline-flex items-center px-3 py-1 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 ${uploading ? 'opacity-50 pointer-events-none' : ''}`}
               >
-                {uploading ? 'Mengunggah...' : '+ Sisipkan Gambar/PDF'}
+                {uploading ? 'Mengunggah...' : '+ Lampirkan File PDF/Doc'}
               </label>
             </div>
           </div>
-          <textarea
-            required
-            rows="15"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#2563eb] focus:border-[#2563eb] font-mono text-sm"
-            value={formData.content}
-            onChange={e => setFormData({...formData, content: e.target.value})}
-          ></textarea>
+          <div className="bg-white rounded-md">
+            <ReactQuill
+              ref={quillRef}
+              theme="snow"
+              modules={modules}
+              formats={formats}
+              value={formData.content}
+              onChange={(val) => setFormData({...formData, content: val})}
+              className="h-[400px] mb-12"
+            />
+          </div>
         </div>
 
         <div className="md:col-span-2 flex items-center">

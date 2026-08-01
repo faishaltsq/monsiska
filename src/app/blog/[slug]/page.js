@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 export default function ArticleDetail() {
   const params = useParams()
@@ -93,7 +94,7 @@ export default function ArticleDetail() {
         <section className='py-12 px-4 bg-white'>
           <div className='container mx-auto max-w-4xl'>
             <article className='prose prose-lg prose-blue max-w-none text-gray-700'>
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                 {article.content}
               </ReactMarkdown>
             </article>
