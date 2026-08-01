@@ -5,23 +5,24 @@ import Image from 'next/image'
 
 const services = [
   {
-    title: 'Konsultan Manajemen Mutu',
-    description: 'Sertifikasi ISO 9001: 2015 untuk manajemen mutu optimal.'
+    title: 'Konsultasi Penelitian',
+    description: 'Bimbingan profesional untuk skripsi, tesis, dan disertasi dengan metodologi yang tepat.',
+    icon: '📊'
+  },
+  {
+    title: 'Pelatihan SPSS & Statistik',
+    description: 'Pembelajaran mendalam tentang analisis data dan software statistik modern.',
+    icon: '📈'
+  },
+  {
+    title: 'Manajemen Mutu & ISO',
+    description: 'Sertifikasi ISO 9001:2015 dan implementasi sistem manajemen mutu.',
+    icon: '⭐'
   },
   {
     title: 'Pelatihan Akreditasi',
-    description:
-      'Pelatihan implementasi dokumen sistem manajemen mutu berbasis akreditasi.'
-  },
-  {
-    title: 'Bimbingan Penelitian',
-    description:
-      'Menyediakan konsultasi, bimbingan, dan bantuan dalam pengerjaan penelitian Skripsi, Tesis, Disertasi.'
-  },
-  {
-    title: 'Konsultasi Statistik',
-    description:
-      'Bimbingan dan pembelajaran kursus SPSS Statistik hingga materi.'
+    description: 'Program pelatihan untuk mempersiapkan lembaga meraih akreditasi berkualitas.',
+    icon: '🎓'
   }
 ]
 
@@ -84,230 +85,248 @@ const additionalInfo = [
 
 export default function Home () {
   return (
-    <div className='pt-28 p-10 flex flex-col lg:flex-row'>
-      <div className='lg:w-3/4 pr-5'>
-        <div className='flex items-center justify-center'>
-          <Image
-            src='/images/MONSISKAMI-removebg-preview.png'
-            width={30}
-            height={20}
-            alt='MONSISKAMI Logo'
-            priority
-          />
-          <h1 className='text-2xl font-bold text-sky-900 '>ONSISKAMI</h1>
+    <div className='pt-20'>
+      {/* Hero Section */}
+      <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-20 px-4'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='grid md:grid-cols-2 gap-12 items-center'>
+            <div>
+              <h1 className='text-4xl md:text-5xl font-bold mb-6 leading-tight'>
+                Solusi Konsultasi Penelitian dan Statistik Terpercaya
+              </h1>
+              <p className='text-lg text-gray-200 mb-8'>
+                Kami membantu Anda dalam penyelesaian penelitian, analisis statistik, dan sertifikasi manajemen mutu dengan profesionalisme tinggi.
+              </p>
+              <a
+                href='https://wa.me/628117784099'
+                className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'
+              >
+                Konsultasi Gratis
+              </a>
+            </div>
+            <div className='flex justify-center'>
+              <Image
+                src='/images/IMG-20250716-WA0009.jpg'
+                width={400}
+                height={400}
+                alt='Konsultan Profesional'
+                className='rounded-2xl shadow-2xl w-full max-w-md h-auto object-cover'
+                priority
+              />
+            </div>
+          </div>
         </div>
-        <h2 className='text-justify text-lg text-sky-900 mt-5 mb-4'>
-          Monsiskami adalah penyedia jasa konsultan penelitian, skripsi, 
-          tesis, dan disertasi terpercaya di Indonesia. Kami juga menyediakan pelatihan SPSS, konsultasi statistik, 
-          dan sertifikasi ISO 9001:2015.
-        </h2>
-        <div className='flex justify-center'>
-          <Image
-            src='/images/IMG-20250716-WA0009.jpg'
-            width={750}
-            height={750}
-            alt='Consultant Image'
-            className='rounded-lg p-3 w-full h-auto object-contain'
-            priority
-          />
-        </div>
-        <div className='p-5'>
-          <p className='text-justify text-sky-800'>
-            Dunia standar dan regulasi, akreditasi, tes, dan sertifikasi tidak
-            sesederhana itu. Tapi mereka membuat hidup dan bisnis jauh lebih
-            efisien dan aman. Bagaimana MONSISKAMI menguji? Apa yang diperiksa
-            oleh MONSISKAMI? Anda akan menemukan jawaban di sini.
+      </section>
+
+      {/* About Section */}
+      <section className='py-16 px-4 bg-white'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='text-center mb-12'>
+            <h2 className='text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4'>
+              Tentang Monsiskami
+            </h2>
+            <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
+          </div>
+          <p className='text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto'>
+            Monsiskami adalah lembaga konsultasi penelitian terpercaya dengan lebih dari 5 tahun pengalaman dalam memberikan solusi penelitian, pelatihan statistik, dan sertifikasi manajemen mutu untuk institusi pendidikan, perusahaan, dan organisasi di Indonesia.
           </p>
         </div>
-        <section
-          id='services'
-          className='py-16 container mx-auto max-w-screen-lg'
-        >
-          <div className='container mx-auto'>
-            <h3 className='text-3xl font-bold text-center mb-8'>
+      </section>
+
+      {/* Services Section */}
+      <section id='services' className='py-16 px-4 bg-gray-50'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='text-center mb-12'>
+            <h2 className='text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4'>
               Layanan Kami
-            </h3>
-            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'
-                >
-                  <h3 className='text-lg font-bold text-sky-900 mb-2'>
-                    {service.title}
-                  </h3>
-                  <p className='text-sky-800'>{service.description}</p>
-                </div>
-              ))}
-            </div>
+            </h2>
+            <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
           </div>
-        </section>
-        <section id='research-consultation'>
-          <div className='container mx-auto'>
-            <h3 className='text-3xl font-bold text-center mb-8'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className='bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition duration-300 border border-gray-100'
+              >
+                <div className='text-4xl mb-4'>{service.icon}</div>
+                <h3 className='text-xl font-bold text-[#1a3a52] mb-3'>
+                  {service.title}
+                </h3>
+                <p className='text-gray-600'>{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Research Types Section */}
+      <section id='research-consultation' className='py-16 px-4 bg-white'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='text-center mb-12'>
+            <h2 className='text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4'>
               Jenis Konsultasi Penelitian
-            </h3>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
-              {researchConsultations.map((consultation, index) => (
-                <div
-                  key={index}
-                  className='bg-white shadow-md rounded-lg p-6 overflow-hidden hover:scale-105 transition duration-300'
-                >
-                  <div className='flex items-center justify-center'>
-                    <Image
-                      src={consultation.image}
-                      width={30}
-                      height={30}
-                      alt={consultation.title}
-                    />
-                    <h3 className='text-lg ml-2 font-bold text-sky-900 mb-2'>
-                      {consultation.title}
-                    </h3>
-                  </div>
-                  <p className='text-sky-900'>{consultation.description}</p>
-                </div>
-              ))}
-            </div>
+            </h2>
+            <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
           </div>
-        </section>
-        <section id='consultation' className='py-10 bg-white'>
-          <div className='container mx-auto'>
-            <div className='flex items-center justify-center mb-6'>
-              <Image
-                src='/images/research.png'
-                width={40}
-                height={30}
-                alt='Research Image'
-                className='mr-3'
-              />
-              <h1 className='text-3xl font-bold text-sky-900'>
-                Konsultasi Penelitian Dengan Jenis Metodenya
-              </h1>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-8 bg-slate-100 rounded-2xl p-5'>
-              <ul className='list-disc pl-5 space-y-1 justify-center'>
-                <li>Validitas & Reliabilitas Kuesioner</li>
-                <li>Analisis Deskriptif</li>
-                <li>Analisis Korelasi</li>
-                <li>Olah Data / Analisis Regresi</li>
-                <li>Path Analysis</li>
-                <li>Analisis Data Time Series</li>
-                <li>Statistik Parametrik & Non-parametrik</li>
-                <li>Successive Interval Method</li>
-                <li>Metode ANOVA</li>
-                <li>Analisis Multivariate</li>
-                <li>Structural Equation Modeling (SEM)</li>
-                <li>Partial Least Square (PLS)</li>
-                <li>Important Performance Analysis</li>
-                <li>Factor Analysis</li>
+          <div className='grid md:grid-cols-3 gap-8'>
+            {researchConsultations.map((consultation, index) => (
+              <div
+                key={index}
+                className='bg-gray-50 rounded-lg p-8 border border-gray-200 hover:border-[#2563eb] transition'
+              >
+                <div className='mb-4'>
+                  <Image
+                    src={consultation.image}
+                    width={60}
+                    height={60}
+                    alt={consultation.title}
+                    className='w-16 h-16 object-contain'
+                  />
+                </div>
+                <h3 className='text-2xl font-bold text-[#1a3a52] mb-3'>
+                  {consultation.title}
+                </h3>
+                <p className='text-gray-700'>{consultation.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research Methods Section */}
+      <section id='consultation' className='py-16 px-4 bg-gray-50'>
+        <div className='container mx-auto max-w-7xl'>
+          <h2 className='text-3xl md:text-4xl font-bold text-[#1a3a52] text-center mb-12'>
+            Metode & Analisis Penelitian
+          </h2>
+          <div className='grid md:grid-cols-2 gap-8'>
+            <div className='bg-white rounded-lg p-8 shadow-sm'>
+              <h3 className='text-2xl font-bold text-[#1a3a52] mb-6'>Teknik Analisis Data</h3>
+              <ul className='space-y-3'>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>Validitas & Reliabilitas Kuesioner</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>Analisis Deskriptif & Korelasi</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>Analisis Regresi & Path Analysis</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>Time Series & ANOVA</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>Multivariate & Factor Analysis</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>SEM & Partial Least Square (PLS)</span>
+                </li>
               </ul>
             </div>
-          </div>
-        </section>
-        <div className='bg-white y-12 mt-2'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='flex items-center justify-center mb-6'>
-              <Image
-                src='/images/spss.png'
-                width={40}
-                height={30}
-                alt='spss statistik'
-                className='mr-3'
-              />
-              <h1 className='text-3xl font-bold text-sky-900'>
-                Statistik & Analisis Data
-              </h1>
-            </div>
-            <div className=' justify-center gap-8 bg-slate-100 rounded-2xl p-5'>
-              <ul className='list-disc pl-5 space-y-1 justify-center'>
-                <li>Konsultasi dukungan SPSS</li>
-                <li>Konsultasi dukungan EVIEWS</li>
-                <li>Konsultasi dukungan AMOS</li>
-                <li>Konsultasi dukungan LISREL</li>
-                <li>Konsultasi SMART PLS</li>
-                <li>Konsultasi dan Training</li>
+            <div className='bg-white rounded-lg p-8 shadow-sm'>
+              <h3 className='text-2xl font-bold text-[#1a3a52] mb-6'>Tools & Software</h3>
+              <ul className='space-y-3'>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>SPSS - Statistical Package</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>EVIEWS - Econometric Analysis</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>AMOS - Structural Equation</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>LISREL - Path Analysis</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>SmartPLS - Partial Least Square</span>
+                </li>
+                <li className='flex items-start'>
+                  <span className='text-[#2563eb] font-bold mr-3'>•</span>
+                  <span className='text-gray-700'>Training & Konsultasi Komprehensif</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
-      <div className='lg:w-1/4 pl-5 mt-10 lg:mt-0'>
-        <div className='grid grid-cols-1 gap-4'>
-          <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'>
-            <h2 className='font-semibold text-xl text-sky-900'>
-              Ingin Bertanya?
-            </h2>
-            <Image
-              src='/images/question.jpg'
-              width={300}
-              height={200}
-              alt='Question Image'
-              className='rounded-full p-3 hover:scale-105 transition-transform'
-            />
-            <p className='text-justify text-sky-800'>
-              Ayo Konsultasikan Penelitianmu dengan kami!
-            </p>
-            <a
-              href='https://wa.me/6281329796998'
-              className='bg-sky-400 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded-2xl mt-4 block text-center'
-            >
-              Konsultasi Gratis!
-            </a>
+      </section>
+
+      {/* Info Cards Section */}
+      <section className='py-16 px-4 bg-white'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='grid md:grid-cols-3 gap-8'>
+            {additionalInfo.map((info, index) => (
+              <div key={index} className='bg-gray-50 rounded-lg p-6 border border-gray-200'>
+                <h3 className='text-xl font-bold text-[#1a3a52] mb-4'>{info.title}</h3>
+                <ul className='space-y-2'>
+                  {info.content.map((content, idx) => (
+                    <li key={idx} className='flex items-start'>
+                      <span className='text-[#2563eb] mr-2'>✓</span>
+                      <span className='text-gray-700'>{content}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          {additionalInfo.map((info, index) => (
-            <div
-              key={index}
-              className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'
-            >
-              <h2 className='font-semibold text-xl text-sky-900'>
-                {info.title}
-              </h2>
-              <ul className='list-disc pl-5 space-y-1 mt-2 text-sky-800'>
-                {info.content.map((content, index) => (
-                  <li key={index}>{content}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'>
-            <h2 className='font-semibold text-xl text-sky-900'>
-              Dosen Yang akan membantu anda
-            </h2>
-            <div className='grid grid-cols-1 gap-4'>
-              <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300'>
-                <Image
-                  src='/images/dosen.png'
-                  width={300}
-                  height={200}
-                  alt='Basirun'
-                  className='rounded-full p-3'
-                />
-                <h3 className='text-lg font-semibold text-sky-900'>
+        </div>
+      </section>
+
+      {/* Expert & Contact Section */}
+      <section className='py-16 px-4 bg-gray-50'>
+        <div className='container mx-auto max-w-7xl grid md:grid-cols-2 gap-12'>
+          <div>
+            <h2 className='text-3xl font-bold text-[#1a3a52] mb-8'>Tim Profesional Kami</h2>
+            <div className='bg-white rounded-lg p-8 shadow-sm'>
+              <Image
+                src='/images/dosen.png'
+                width={200}
+                height={200}
+                alt='Dr. Basirun'
+                className='rounded-lg w-full h-auto mb-6 object-cover'
+              />
+              <h3 className='text-2xl font-bold text-[#1a3a52] mb-2'>
                 Dr. H. Muhammad Basirun Al Ummah, M.Kes.
-                </h3>
-                <p className='text-sky-800'>
-                  Dosen Kesehatan dan Manajemen Universitas Muhammadiyah Gombong
-                </p>
+              </h3>
+              <p className='text-gray-600 mb-4'>
+                Dosen Kesehatan dan Manajemen Universitas Muhammadiyah Gombong
+              </p>
+              <p className='text-gray-700'>
+                Memiliki pengalaman lebih dari 15 tahun dalam bidang manajemen, kesehatan, dan penelitian akademik.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h2 className='text-3xl font-bold text-[#1a3a52] mb-8'>Lokasi Kantor & Hubungi Kami</h2>
+            <div className='space-y-6'>
+              <div className='bg-white rounded-lg p-6 shadow-sm border-l-4 border-[#2563eb]'>
+                <h3 className='font-bold text-[#1a3a52] mb-2'>Kebumen</h3>
+                <p className='text-gray-700'>Jl. Candiwulan Ds Mangli RT 01/ RW 01, Kec. Kuwarasan, Kebumen-Jawa Tengah 54366</p>
+              </div>
+              <div className='bg-white rounded-lg p-6 shadow-sm border-l-4 border-[#2563eb]'>
+                <h3 className='font-bold text-[#1a3a52] mb-2'>Batam</h3>
+                <p className='text-gray-700'>Perumahan Bida Asri 3, Blok A2 No 9, Batu Besar, Nongsa, Kota Batam-Kepulauan Riau, 29465</p>
+              </div>
+              <div className='bg-[#1a3a52] text-white rounded-lg p-6'>
+                <p className='text-sm mb-4'>Hubungi kami untuk konsultasi gratis:</p>
+                <a href='https://wa.me/628117784099' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-2 px-6 rounded transition'>
+                  Chat WhatsApp
+                </a>
               </div>
             </div>
-            <div className='bg-white p-5 rounded-lg shadow-md overflow-hidden hover:scale-105 transition duration-300 mt-4'>
-              <h2 className='font-semibold text-xl text-sky-900'>
-                Office Address
-              </h2>
-              <ul className='list-disc pl-5 space-y-1 mt-2 text-sky-900'>
-                <li>
-                  <strong>Kebumen:</strong> Jl. Candiwulan Ds Mangli RT 01/ RW
-                  01, Kec. Kuwarasan, Kebumen-Jawa Tengah 54366
-                </li>
-                <li>
-                  <strong>Batam:</strong> Perumahan Bida Asri 3, Blok A2 No 9,
-                  Batu Besar, Nongsa, Kota Batam-Kepulauan Riau, 29465
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 
   )
