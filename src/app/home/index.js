@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const services = [
   {
@@ -461,9 +462,9 @@ export default function Home () {
             ))}
           </div>
           <div className='text-center mt-12'>
-            <a href='/blog' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'>
+            <Link href='/blog' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'>
               Lihat Semua Artikel
-            </a>
+            </Link>
           </div>
         </div>
       </section>
