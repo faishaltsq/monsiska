@@ -114,7 +114,7 @@ export default function ArticleDetail() {
               {article.category}
             </span>
           </div>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4 leading-tight text-white'>{article.title}</h1>
+          <h1 className='text-4xl md:text-5xl font-bold mb-4 leading-tight !text-white'>{article.title}</h1>
           <div className='flex flex-wrap items-center gap-4 text-gray-200'>
             <span>Oleh {article.author}</span>
             <span>•</span>
@@ -198,7 +198,7 @@ export default function ArticleDetail() {
 
           {/* CTA Section */}
           <div className='mt-16 bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white rounded-lg p-8 text-center'>
-            <h3 className='text-2xl font-bold mb-3 text-white'>Butuh Konsultasi Lebih Lanjut?</h3>
+            <h3 className='text-2xl font-bold mb-3 !text-white'>Butuh Konsultasi Lebih Lanjut?</h3>
             <p className='mb-6'>Hubungi tim expert kami untuk mendiskusikan topik ini lebih mendalam</p>
             <a
               href='https://wa.me/628117784099'

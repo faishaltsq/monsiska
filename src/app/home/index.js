@@ -175,7 +175,7 @@ export default function Home () {
         <div className='container mx-auto max-w-7xl'>
           <div className='grid md:grid-cols-2 gap-12 items-center'>
               <div>
-                <h1 className='text-4xl md:text-5xl font-bold mb-6 leading-tight text-white'>
+                <h1 className='text-4xl md:text-5xl font-bold mb-6 leading-tight !text-white'>
                   Solusi Konsultasi Penelitian dan Statistik Terpercaya
                 </h1>
                 <p className='text-lg text-gray-200 mb-8'>
