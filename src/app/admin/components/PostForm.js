@@ -187,7 +187,8 @@ export default function PostForm({ initialData = null, isEdit = false }) {
         <div className="md:col-span-2">
           <div className="flex justify-between items-end mb-1">
             <label className="block text-sm font-medium text-gray-700">
-              Konten (Gunakan Markdown: ## Heading 2, ### Heading 3, - List)
+              Konten (Markdown Support: ## Judul, - List, Tabel dll) 
+              <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" className="text-blue-500 ml-2 hover:underline text-xs">(Panduan Markdown)</a>
             </label>
             <div className="relative">
               <input
