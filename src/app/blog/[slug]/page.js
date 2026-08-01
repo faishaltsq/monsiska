@@ -19,11 +19,24 @@ export default function ArticleDetail() {
           const data = await res.json()
           setArticle(data)
           
-          // Fetch related articles by category
+          // Fetch related articles (prioritaskan kategori sama, sisanya ambil terbaru)
           const resAll = await fetch('/api/posts')
           if (resAll.ok) {
             const allData = await resAll.json()
-            setRelatedArticles(allData.filter(a => a.id !== data.id && a.category === data.category).slice(0, 3))
+            const otherArticles = allData.filter(a => a.id !== data.id)
+            
+            // Cari yang kategorinya sama
+            let related = otherArticles.filter(a => a.category === data.category)
+            
+            // Kalau kurang dari 3, tambahin artikel lain yang kategorinya beda
+            if (related.length < 3) {
+              const diffCategory = otherArticles.filter(a => a.category !== data.category)
+              related = [...related, ...diffCategory].slice(0, 3)
+            } else {
+              related = related.slice(0, 3)
+            }
+            
+            setRelatedArticles(related)
           }
         }
       } catch (err) {
