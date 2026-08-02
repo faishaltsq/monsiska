@@ -56,12 +56,40 @@ export default function BukuPenelitianPage() {
               <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                 {folders.map((folder) => (
                   <Link key={folder.folder_slug} href={`/buku/${folder.folder_slug}`}>
-                    <div className='bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:border-[#2563eb] hover:shadow-md transition-all duration-200 group cursor-pointer h-full flex flex-col justify-center items-center text-center'>
-                      <svg className="w-20 h-20 text-[#1a3a52] group-hover:text-[#2563eb] mb-4 transition-colors" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
-                      </svg>
-                      <h3 className='text-lg font-bold text-gray-800 group-hover:text-[#2563eb]'>{folder.folder_name}</h3>
-                      <p className='text-sm text-gray-500 mt-2'>{folder.item_count} File</p>
+                    <div className='bg-white rounded-xl shadow-sm border border-gray-200 hover:border-[#2563eb] hover:shadow-xl transition-all duration-300 group cursor-pointer h-full flex flex-col overflow-hidden relative'>
+                      
+                      {/* Folder Cover Background */}
+                      <div className="h-48 w-full bg-gray-100 relative overflow-hidden flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a3a52]/80 to-transparent z-10 transition-opacity group-hover:opacity-75"></div>
+                        
+                        {folder.folder_cover && folder.folder_cover.length > 5 ? (
+                          <img 
+                            src={folder.folder_cover} 
+                            alt={`Cover ${folder.folder_name}`} 
+                            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                          />
+                        ) : (
+                          // Fallback Gradient Pattern
+                          <div className="w-full h-full bg-gradient-to-br from-[#1a3a52] to-[#2563eb] opacity-90 flex items-center justify-center">
+                            <svg className="w-24 h-24 text-white/20 transform transition-transform duration-500 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
+                            </svg>
+                          </div>
+                        )}
+                        
+                        {/* File Count Badge */}
+                        <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                          <span className="text-xs font-bold text-[#1a3a52]">{folder.item_count} File</span>
+                        </div>
+                      </div>
+
+                      {/* Folder Info */}
+                      <div className="p-5 bg-white relative z-20 flex-1 flex flex-col justify-between">
+                        <h3 className='text-xl font-bold text-gray-800 group-hover:text-[#2563eb] transition-colors mb-2'>{folder.folder_name}</h3>
+                        <div className="flex items-center text-[#2563eb] text-sm font-semibold mt-auto group-hover:translate-x-1 transition-transform">
+                          Lihat Isi Folder <span className="ml-1">→</span>
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 ))}

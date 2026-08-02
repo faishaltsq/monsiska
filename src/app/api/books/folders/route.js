@@ -3,7 +3,11 @@ import { sql } from '@/lib/db'
 export async function GET() {
   try {
     const folders = await sql`
-      SELECT folder_slug, folder_name, COUNT(id) as item_count 
+      SELECT 
+        folder_slug, 
+        folder_name, 
+        COUNT(id) as item_count,
+        MAX(cover_url) as folder_cover
       FROM books 
       WHERE folder_slug IS NOT NULL
       GROUP BY folder_slug, folder_name
