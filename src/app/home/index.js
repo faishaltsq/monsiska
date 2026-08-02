@@ -182,7 +182,7 @@ export default function Home () {
                 Kami membantu Anda dalam penyelesaian penelitian, analisis statistik, dan sertifikasi manajemen mutu dengan profesionalisme tinggi.
               </p>
               <a
-                href='https://wa.me/628117784099'
+                href='https://wa.me/6281329796998'
                 className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'
               >
                 Konsultasi Gratis
@@ -533,7 +533,7 @@ export default function Home () {
               </div>
               <div className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white rounded-lg p-6'>
                 <p className='text-sm mb-4 font-semibold'>Hubungi kami untuk konsultasi gratis:</p>
-                <a href='https://wa.me/628117784099' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-2 px-6 rounded transition'>
+                <a href='https://wa.me/6281329796998' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-2 px-6 rounded transition'>
                   Chat WhatsApp
                 </a>
                 <p className='text-xs text-gray-300 mt-3'>Kami siap membantu Anda 24/7</p>

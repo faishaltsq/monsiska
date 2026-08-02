@@ -124,7 +124,7 @@ export default function ArticleDetail() {
             <h3 className='text-2xl font-bold mb-3 !text-white'>Butuh Konsultasi Lebih Lanjut?</h3>
             <p className='mb-6'>Hubungi tim expert kami untuk mendiskusikan topik ini lebih mendalam</p>
             <a
-              href='https://wa.me/628117784099'
+              href='https://wa.me/6281329796998'
               className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'
             >
               Chat WhatsApp Sekarang

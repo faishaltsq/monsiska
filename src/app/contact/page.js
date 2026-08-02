@@ -69,7 +69,7 @@ export default function ContactPage() {
               <h2 className='text-xl font-bold text-[#1a3a52] mb-3'>WhatsApp</h2>
               <p className='text-gray-600 mb-4'>Hubungi kami melalui WhatsApp untuk konsultasi cepat</p>
               <a
-                href='https://wa.me/628117784099'
+                href='https://wa.me/6281329796998'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='inline-block text-[#2563eb] font-bold hover:text-[#1d4ed8] transition'

@@ -182,7 +182,7 @@ const Portfolio = () => {
           <p className='text-gray-200 mb-8 max-w-2xl mx-auto'>
             Hubungi kami hari ini untuk mendiskusikan kebutuhan penelitian dan konsultasi Anda
           </p>
-          <a href='https://wa.me/628117784099' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'>
+          <a href='https://wa.me/6281329796998' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'>
             Hubungi Kami Sekarang
           </a>
         </div>

@@ -99,7 +99,7 @@ export default function RootLayout({ children }) {
               "keywords": "konsultasi, workshop, penelitian, skripsi, tesis, SPSS, statistik, ISO 9001",
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+62-811-7784-099",
+                "telephone": "+62-813-2979-6998",
                 "contactType": "customer service",
                 "email": "monsiskami@gmail.com",
                 "availableLanguage": "Indonesian"
@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
                 "addressRegion": "Indonesia"
               },
               "sameAs": [
-                "https://wa.me/628117784099"
+                "https://wa.me/6281329796998"
               ],
               "offers": {
                 "@type": "Offer",

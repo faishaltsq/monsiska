@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Kontak</h4>
             <ul className="text-gray-300 text-sm space-y-2">
-              <li><a href="https://wa.me/628117784099" className="hover:text-white transition">WhatsApp</a></li>
+              <li><a href="https://wa.me/6281329796998" className="hover:text-white transition">WhatsApp</a></li>
               <li><a href="mailto:monsiskami@gmail.com" className="hover:text-white transition">Email</a></li>
               <li><a href="https://www.instagram.com/monsiskami" className="hover:text-white transition">Instagram</a></li>
             </ul>
