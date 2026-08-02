@@ -22,12 +22,16 @@ export default function BukuPenelitianPage() {
 
   return (
     <div className='pt-20 bg-gray-50 min-h-screen'>
-      {/* Hero Section */}
-      <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-16 px-4'>
-        <div className='container mx-auto max-w-7xl text-center'>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4 !text-white'>Perpustakaan Dokumen</h1>
-          <p className='text-lg text-gray-200 max-w-2xl mx-auto'>
-            Akses berbagai koleksi buku, jurnal, dan referensi penelitian yang disusun rapi dalam direktori.
+            {/* Hero Section */}
+      <section className='relative bg-[#0f283d] text-white py-20 px-4 overflow-hidden border-b-[6px] border-[#2563eb]'>
+        <div className='absolute inset-0 opacity-[0.04]' style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
+        <div className='container mx-auto max-w-7xl text-center relative z-10'>
+          <div className='inline-block mb-4 px-3 py-1 bg-[#2563eb]/20 border border-[#2563eb]/30 rounded text-sm font-semibold tracking-wide text-blue-100 uppercase'>
+            Akses Publik
+          </div>
+          <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 !text-white tracking-tight'>Perpustakaan Dokumen</h1>
+          <p className='text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-2xl mx-auto'>
+            Akses berbagai koleksi buku, jurnal, dan referensi penelitian yang disusun rapi dalam direktori untuk mendukung karya ilmiah Anda.
           </p>
         </div>
       </section>
@@ -45,8 +49,10 @@ export default function BukuPenelitianPage() {
 
           <div className="bg-gray-100 p-6 md:p-8 rounded-b-xl border border-gray-200 shadow-inner min-h-[400px]">
             {loading ? (
-              <div className="text-center py-20">
-                <p className="text-gray-500 text-lg">Memuat direktori...</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {[1, 2, 3, 4].map(i => (
+                  <div key={i} className="h-64 bg-gray-200 rounded-xl animate-pulse"></div>
+                ))}
               </div>
             ) : folders.length === 0 ? (
               <div className="text-center py-20 bg-white rounded-xl shadow-sm border border-gray-100">
@@ -101,3 +107,5 @@ export default function BukuPenelitianPage() {
     </div>
   )
 }
+
+

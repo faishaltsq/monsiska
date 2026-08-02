@@ -71,24 +71,32 @@ export default function ArticleDetail() {
 
   return (
     <div className='pt-20 bg-white'>
-      {/* Hero Section */}
-      <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-12 px-4'>
-        <div className='container mx-auto max-w-4xl'>
-          <div className='mb-4'>
-            <span className='text-xs font-semibold bg-blue-500 bg-opacity-20 text-blue-100 px-3 py-1 rounded-full'>
-              {article.category}
-            </span>
+              {/* Hero Section */}
+        <section className='relative bg-[#0f283d] text-white py-16 px-4 overflow-hidden border-b border-gray-800'>
+          <div className='absolute inset-0 opacity-[0.03]' style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
+          <div className='container mx-auto max-w-4xl relative z-10'>
+            <div className='mb-6'>
+              <span className='inline-block text-xs font-bold uppercase tracking-wider bg-[#2563eb]/20 border border-[#2563eb]/30 text-blue-100 px-3 py-1.5 rounded'>
+                {article.category}
+              </span>
+            </div>
+            <h1 className='text-3xl md:text-5xl font-extrabold mb-6 leading-tight !text-white tracking-tight'>{article.title}</h1>
+            <div className='flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-300 text-sm font-medium'>
+              <div className='flex items-center'>
+                <svg className="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <span>{article.author}</span>
+              </div>
+              <div className='flex items-center'>
+                <svg className="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>{new Date(article.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+              </div>
+              <div className='flex items-center'>
+                <svg className="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>{article.read_time}</span>
+              </div>
+            </div>
           </div>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4 leading-tight !text-white'>{article.title}</h1>
-          <div className='flex flex-wrap items-center gap-4 text-gray-200'>
-            <span>Oleh {article.author}</span>
-            <span>•</span>
-            <span>{new Date(article.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            <span>•</span>
-            <span>{article.read_time}</span>
-          </div>
-        </div>
-      </section>
+        </section>
 
         {/* Article Content */}
         <section className='py-12 px-4 bg-white'>
@@ -144,3 +152,4 @@ export default function ArticleDetail() {
     </div>
   )
 }
+

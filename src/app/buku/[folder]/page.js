@@ -39,16 +39,18 @@ export default function FolderBukuPage() {
 
   return (
     <div className='pt-20 bg-gray-50 min-h-screen'>
-      {/* Hero Section */}
-      <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-16 px-4'>
-        <div className='container mx-auto max-w-7xl text-center'>
-          <div className="mb-4">
-            <Link href="/buku" className="inline-block text-blue-200 hover:text-white transition text-sm font-semibold">
-              ← Kembali ke Direktori
+            {/* Hero Section */}
+      <section className='relative bg-[#0f283d] text-white py-16 px-4 overflow-hidden border-b-[6px] border-[#2563eb]'>
+        <div className='absolute inset-0 opacity-[0.04]' style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
+        <div className='container mx-auto max-w-7xl text-center relative z-10'>
+          <div className="mb-6">
+            <Link href="/buku" className="inline-flex items-center text-blue-300 hover:text-white transition text-sm font-semibold tracking-wide">
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+              Kembali ke Direktori
             </Link>
           </div>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4 !text-white'>{folderDisplayName}</h1>
-          <p className='text-lg text-gray-200 max-w-2xl mx-auto'>
+          <h1 className='text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 !text-white tracking-tight'>{folderDisplayName}</h1>
+          <p className='text-lg md:text-xl text-gray-300 font-light max-w-2xl mx-auto'>
             Koleksi file yang ada di dalam folder ini.
           </p>
         </div>
@@ -92,8 +94,10 @@ export default function FolderBukuPage() {
 
           <div className="bg-gray-100 p-6 md:p-8 rounded-b-xl border border-gray-200 shadow-inner min-h-[400px]">
           {loading ? (
-            <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">Memuat isi folder...</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[1, 2, 3, 4].map(i => (
+                <div key={i} className="h-80 bg-gray-200 rounded-xl animate-pulse"></div>
+              ))}
             </div>
           ) : books.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-xl shadow-sm border border-gray-100">
@@ -170,3 +174,5 @@ export default function FolderBukuPage() {
     </div>
   )
 }
+
+

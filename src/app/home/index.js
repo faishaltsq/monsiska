@@ -155,34 +155,50 @@ export default function Home () {
 
   return (
     <div className='pt-20'>
-      {/* Hero Section */}
-      <section className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white py-20 px-4'>
-        <div className='container mx-auto max-w-7xl'>
-          <div className='grid md:grid-cols-2 gap-12 items-center'>
-              <div>
-                <h1 className='text-4xl md:text-5xl font-bold mb-6 leading-tight !text-white'>
+            {/* Hero Section */}
+      <section className='relative bg-[#0f283d] text-white py-24 px-4 overflow-hidden border-b-[6px] border-[#2563eb]'>
+        {/* Subtle dot pattern background */}
+        <div className='absolute inset-0 opacity-[0.04]' style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
+        
+        <div className='container mx-auto max-w-7xl relative z-10'>
+          <div className='grid lg:grid-cols-2 gap-12 items-center'>
+              <div className='max-w-2xl'>
+                <div className='inline-block mb-6 px-3 py-1 bg-[#2563eb]/20 border border-[#2563eb]/30 rounded text-sm font-semibold tracking-wide text-blue-100 uppercase'>
+                  Lembaga Konsultan & Workshop
+                </div>
+                <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.15] text-white tracking-tight'>
                   Solusi Konsultasi Penelitian dan Statistik Terpercaya
                 </h1>
-                <p className='text-lg text-gray-200 mb-8'>
-                Kami membantu Anda dalam penyelesaian penelitian, analisis statistik, dan sertifikasi manajemen mutu dengan profesionalisme tinggi.
-              </p>
-              <a
-                href='https://wa.me/6281329796998'
-                className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'
-              >
-                Konsultasi Gratis
-              </a>
-            </div>
-            <div className='flex justify-center'>
-              <Image
-                src='/images/IMG-20250716-WA0009.jpg'
-                width={400}
-                height={400}
-                alt='Konsultan Profesional'
-                className='rounded-2xl shadow-2xl w-full max-w-md h-auto object-cover'
-                priority
-              />
-            </div>
+                <p className='text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-light'>
+                  Kami membantu Anda dalam penyelesaian penelitian, analisis statistik, dan sertifikasi manajemen mutu dengan standar akademis dan profesionalisme tinggi.
+                </p>
+                <div className='flex flex-wrap items-center gap-4'>
+                  <a
+                    href='https://wa.me/6281329796998'
+                    className='inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold py-3.5 px-8 rounded shadow-lg shadow-blue-900/20 transition-all duration-200 hover:-translate-y-0.5'
+                  >
+                    Konsultasi Gratis
+                  </a>
+                  <a
+                    href='#services'
+                    className='inline-flex items-center justify-center bg-transparent border border-white/30 hover:bg-white/10 text-white font-semibold py-3.5 px-8 rounded transition-all duration-200'
+                  >
+                    Lihat Layanan
+                  </a>
+                </div>
+              </div>
+              <div className='flex justify-center lg:justify-end relative mt-8 lg:mt-0'>
+                {/* Decorative element behind image */}
+                <div className='absolute -inset-4 bg-gradient-to-tr from-[#2563eb]/20 to-transparent rounded-2xl -z-10 blur-2xl'></div>
+                <Image
+                  src='/images/IMG-20250716-WA0009.jpg'
+                  width={550}
+                  height={550}
+                  alt='Konsultan Profesional Monsiskami'
+                  className='rounded shadow-2xl w-full max-w-lg h-auto object-cover border-4 border-white/5'
+                  priority
+                />
+              </div>
           </div>
         </div>
       </section>
@@ -535,3 +551,4 @@ export default function Home () {
 
   )
 }
+
