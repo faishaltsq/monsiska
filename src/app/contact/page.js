@@ -74,7 +74,7 @@ export default function ContactPage() {
                 rel='noopener noreferrer'
                 className='inline-block text-[#2563eb] font-bold hover:text-[#1d4ed8] transition'
               >
-                +62 811-7784-099 →
+                +62 813-2979-6998 →
               </a>
             </div>
 
