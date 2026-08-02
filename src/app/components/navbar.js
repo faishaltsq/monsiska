@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: 'Beranda', path: '/' },
     { name: 'Portofolio', path: '/portfolio' },
     { name: 'Blog', path: '/blog' },
+    { name: 'Buku', path: '/buku' },
     { name: 'Hubungi Kami', path: '/contact' },
   ];
 
