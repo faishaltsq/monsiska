@@ -16,7 +16,8 @@ export default function NewBookPage() {
     description: '',
     file_url: '',
     file_type: '',
-    cover_url: ''
+    cover_url: '',
+    folder_name: 'Buku Penelitian' // default folder
   })
 
   const handleFileUpload = async (e, type) => {
@@ -97,6 +98,19 @@ export default function NewBookPage() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Judul Buku / Dokumen</label>
             <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#2563eb]" value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Pilih / Ketik Nama Folder</label>
+            <input 
+              type="text" 
+              required 
+              placeholder="Contoh: Buku Penelitian, Jurnal, Modul..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#2563eb]" 
+              value={formData.folder_name} 
+              onChange={e => setFormData({...formData, folder_name: e.target.value})} 
+            />
+            <p className="text-xs text-gray-500 mt-1">Jika folder belum ada, sistem akan otomatis membuatkannya.</p>
           </div>
 
           <div>

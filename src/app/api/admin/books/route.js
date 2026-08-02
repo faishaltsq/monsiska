@@ -13,15 +13,17 @@ export async function GET() {
 export async function POST(req) {
   try {
     const body = await req.json()
-    const { title, description, file_url, file_type, cover_url } = body
+    const { title, description, file_url, file_type, cover_url, folder_name } = body
 
-    if (!title || !file_url || !file_type) {
-      return new Response(JSON.stringify({ error: 'Judul dan File wajib diisi' }), { status: 400 })
+    if (!title || !file_url || !file_type || !folder_name) {
+      return new Response(JSON.stringify({ error: 'Judul, File, dan Nama Folder wajib diisi' }), { status: 400 })
     }
 
+    const folder_slug = folder_name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
+
     const result = await sql`
-      INSERT INTO books (title, description, file_url, file_type, cover_url)
-      VALUES (${title}, ${description || ''}, ${file_url}, ${file_type}, ${cover_url || ''})
+      INSERT INTO books (title, description, file_url, file_type, cover_url, folder_name, folder_slug)
+      VALUES (${title}, ${description || ''}, ${file_url}, ${file_type}, ${cover_url || ''}, ${folder_name}, ${folder_slug})
       RETURNING *
     `
     return new Response(JSON.stringify(result[0]), { status: 201 })
