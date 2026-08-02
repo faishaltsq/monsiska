@@ -50,8 +50,8 @@ export default function AdminBukuList() {
         <div className='flex justify-between items-center mb-8'>
           <h1 className='text-3xl font-bold text-[#1a3a52]'>Kelola Buku / Dokumen</h1>
           <div className='space-x-2 md:space-x-4 flex flex-wrap gap-y-2 justify-end'>
-            <Link href='/admin/blog' className='bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition text-sm'>
-              ← Artikel
+            <Link href='/admin/dashboard' className='bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition text-sm'>
+              ← Dashboard Utama
             </Link>
             <Link href='/admin/buku/bulk' className='bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition text-sm font-semibold shadow-sm'>
               Bulk Upload (Banyak File)

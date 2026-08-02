@@ -23,7 +23,7 @@ export default function AdminLogin() {
       })
 
       if (res.ok) {
-        router.push('/admin/blog')
+        router.push('/admin/dashboard')
         router.refresh()
       } else {
         const data = await res.json()
