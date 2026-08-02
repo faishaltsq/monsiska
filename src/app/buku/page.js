@@ -6,6 +6,8 @@ import Image from 'next/image'
 export default function BukuPenelitianPage() {
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(true)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [sortBy, setSortBy] = useState('newest') // 'newest', 'oldest', 'a-z', 'z-a'
 
   useEffect(() => {
     fetch('/api/books')
@@ -20,6 +22,17 @@ export default function BukuPenelitianPage() {
       })
   }, [])
 
+  // Fungsi Filter & Sort
+  const filteredAndSortedBooks = books
+    .filter(book => book.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    .sort((a, b) => {
+      if (sortBy === 'newest') return new Date(b.created_at) - new Date(a.created_at)
+      if (sortBy === 'oldest') return new Date(a.created_at) - new Date(b.created_at)
+      if (sortBy === 'a-z') return a.title.localeCompare(b.title)
+      if (sortBy === 'z-a') return b.title.localeCompare(a.title)
+      return 0
+    })
+
   return (
     <div className='pt-20 bg-gray-50 min-h-screen'>
       {/* Hero Section */}
@@ -33,9 +46,42 @@ export default function BukuPenelitianPage() {
       </section>
 
       {/* Book Shelf Section */}
-      <section className='py-16 px-4'>
+      <section className='py-12 px-4'>
         <div className='container mx-auto max-w-7xl'>
           
+          {/* Header Folder & Controls */}
+          <div className="bg-white rounded-t-xl border border-gray-200 border-b-0 p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center space-x-3">
+              <svg className="w-8 h-8 text-[#2563eb]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path></svg>
+              <h2 className="text-2xl font-bold text-[#1a3a52]">Folder: Buku Penelitian</h2>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row items-center w-full md:w-auto gap-4">
+              <div className="relative w-full sm:w-64">
+                <input 
+                  type="text" 
+                  placeholder="Cari judul buku..." 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                />
+                <svg className="w-5 h-5 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </div>
+              
+              <select 
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb] bg-white text-gray-700"
+              >
+                <option value="newest">Terbaru (Default)</option>
+                <option value="oldest">Terlama</option>
+                <option value="a-z">Abjad (A - Z)</option>
+                <option value="z-a">Abjad (Z - A)</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="bg-gray-100 p-6 md:p-8 rounded-b-xl border border-gray-200 shadow-inner">
           {loading ? (
             <div className="text-center py-20">
               <p className="text-gray-500 text-lg">Memuat koleksi buku...</p>
@@ -44,9 +90,13 @@ export default function BukuPenelitianPage() {
             <div className="text-center py-20 bg-white rounded-xl shadow-sm border border-gray-100">
               <p className="text-gray-500 text-lg">Belum ada koleksi buku yang ditambahkan.</p>
             </div>
+          ) : filteredAndSortedBooks.length === 0 ? (
+            <div className="text-center py-20 bg-white rounded-xl shadow-sm border border-gray-100">
+              <p className="text-gray-500 text-lg">Tidak menemukan dokumen yang sesuai dengan pencarian Anda.</p>
+            </div>
           ) : (
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-              {books.map((book) => (
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+              {filteredAndSortedBooks.map((book) => (
                 <div key={book.id} className='bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col'>
                   
                   {/* Book Cover Area */}
@@ -105,12 +155,7 @@ export default function BukuPenelitianPage() {
               ))}
             </div>
           )}
-
-          {/* Decorative Shelf Base */}
-          {!loading && books.length > 0 && (
-            <div className="w-full h-4 bg-gray-200 rounded-sm mt-8 shadow-inner border-b-2 border-gray-300"></div>
-          )}
-
+          </div>
         </div>
       </section>
     </div>
