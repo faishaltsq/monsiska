@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -136,38 +136,23 @@ const caseStudies = [
   }
 ]
 
-const blogPosts = [
-  {
-    title: 'Panduan Memilih Metode Penelitian yang Tepat',
-    category: 'Tips Penelitian',
-    excerpt: 'Memilih metode penelitian yang tepat adalah langkah awal penting. Pelajari perbedaan antara kualitatif, kuantitatif, dan mixed methods.',
-    readTime: '8 min',
-    date: '15 Jan 2025'
-  },
-  {
-    title: 'Validitas dan Reliabilitas: Konsep Penting dalam Penelitian',
-    category: 'Metodologi',
-    excerpt: 'Pahami konsep validitas dan reliabilitas instrumen penelitian, dan bagaimana cara mengukurnya dengan SPSS.',
-    readTime: '10 min',
-    date: '12 Jan 2025'
-  },
-  {
-    title: 'Cara Membaca dan Menginterpretasi Output SPSS',
-    category: 'Tutorial SPSS',
-    excerpt: 'Panduan lengkap untuk membaca output SPSS mulai dari tabel deskriptif hingga uji hipotesis.',
-    readTime: '12 min',
-    date: '10 Jan 2025'
-  },
-  {
-    title: 'Mengatasi Kesalahan Umum dalam Analisis Regresi',
-    category: 'Data Analytics',
-    excerpt: 'Ketahui kesalahan-kesalahan umum yang sering dilakukan dalam analisis regresi dan cara mengatasinya.',
-    readTime: '7 min',
-    date: '8 Jan 2025'
-  }
-]
-
 export default function Home () {
+  const [randomPosts, setRandomPosts] = useState([])
+
+  useEffect(() => {
+    fetch('/api/posts')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          // Shuffle array untuk nampilin random
+          const shuffled = data.sort(() => 0.5 - Math.random())
+          // Ambil cuma 4
+          setRandomPosts(shuffled.slice(0, 4))
+        }
+      })
+      .catch(err => console.error('Failed to fetch posts', err))
+  }, [])
+
   return (
     <div className='pt-20'>
       {/* Hero Section */}
@@ -442,23 +427,27 @@ export default function Home () {
             <p className='text-gray-600 text-lg'>Tips, tutorial, dan panduan lengkap untuk penelitian Anda</p>
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
-            {blogPosts.map((post, index) => (
-              <div key={index} className='bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition cursor-pointer'>
-                <div className='p-6'>
-                  <div className='flex items-center justify-between mb-3'>
-                    <span className='text-xs font-semibold text-[#2563eb] bg-blue-50 px-2 py-1 rounded'>
-                      {post.category}
-                    </span>
-                    <span className='text-xs text-gray-500'>{post.date}</span>
-                  </div>
-                  <h3 className='text-lg font-bold text-[#1a3a52] mb-3 line-clamp-2'>{post.title}</h3>
-                  <p className='text-sm text-gray-600 mb-4 line-clamp-2'>{post.excerpt}</p>
-                  <div className='flex items-center justify-between pt-4 border-t'>
-                    <span className='text-xs text-gray-500'>{post.readTime} read</span>
-                    <span className='text-[#2563eb] font-semibold text-sm'>Baca →</span>
+            {randomPosts.map((post) => (
+              <Link key={post.id} href={`/blog/${post.slug}`}>
+                <div className='bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition cursor-pointer h-full'>
+                  <div className='p-6'>
+                    <div className='flex items-center justify-between mb-3'>
+                      <span className='text-xs font-semibold text-[#2563eb] bg-blue-50 px-2 py-1 rounded line-clamp-1'>
+                        {post.category}
+                      </span>
+                      <span className='text-xs text-gray-500'>
+                        {new Date(post.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </span>
+                    </div>
+                    <h3 className='text-lg font-bold text-[#1a3a52] mb-3 line-clamp-2'>{post.title}</h3>
+                    <p className='text-sm text-gray-600 mb-4 line-clamp-2'>{post.excerpt}</p>
+                    <div className='flex items-center justify-between pt-4 border-t'>
+                      <span className='text-xs text-gray-500'>{post.read_time}</span>
+                      <span className='text-[#2563eb] font-semibold text-sm'>Baca →</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className='text-center mt-12'>
