@@ -152,12 +152,12 @@ export default function FolderBukuPage() {
                     
                     {/* Action Button */}
                     <a 
-                      href={book.file_url} 
+                      href={book.file_type === 'PDF' ? book.file_url : `https://docs.google.com/gview?url=${encodeURIComponent(book.file_url)}&embedded=true`} 
                       target='_blank' 
                       rel='noopener noreferrer'
                       className='block w-full text-center bg-[#f8f9fa] hover:bg-[#2563eb] text-[#1a3a52] hover:text-white border border-gray-200 hover:border-[#2563eb] font-semibold py-2.5 rounded-lg transition-colors duration-200'
                     >
-                      Buka / Download
+                      Baca Dokumen
                     </a>
                   </div>
                 </div>

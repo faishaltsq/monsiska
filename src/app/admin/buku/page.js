@@ -82,7 +82,7 @@ export default function AdminBukuList() {
                     </div>
                   </div>
                   <div className='flex items-center space-x-3'>
-                    <a href={book.file_url} target='_blank' rel='noreferrer' className='text-gray-600 hover:text-gray-900'>
+                    <a href={book.file_type === 'PDF' ? book.file_url : `https://docs.google.com/gview?url=${encodeURIComponent(book.file_url)}&embedded=true`} target='_blank' rel='noreferrer' className='text-gray-600 hover:text-gray-900'>
                       Lihat File
                     </a>
                     <button onClick={() => handleDelete(book.id)} className='text-red-600 hover:text-red-900'>
