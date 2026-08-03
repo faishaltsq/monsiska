@@ -203,6 +203,30 @@ export default function Home () {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className='py-12 px-4 bg-white border-b border-gray-100'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-8 text-center'>
+            <div>
+              <div className='text-4xl font-extrabold text-[#2563eb] mb-2'>500+</div>
+              <p className='text-[#1a3a52] font-semibold'>Klien Terbantu</p>
+            </div>
+            <div>
+              <div className='text-4xl font-extrabold text-[#2563eb] mb-2'>5+</div>
+              <p className='text-[#1a3a52] font-semibold'>Tahun Pengalaman</p>
+            </div>
+            <div>
+              <div className='text-4xl font-extrabold text-[#2563eb] mb-2'>1000+</div>
+              <p className='text-[#1a3a52] font-semibold'>Penelitian Selesai</p>
+            </div>
+            <div>
+              <div className='text-4xl font-extrabold text-[#2563eb] mb-2'>98%</div>
+              <p className='text-[#1a3a52] font-semibold'>Tingkat Kepuasan</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section className='py-16 px-4 bg-white'>
         <div className='container mx-auto max-w-7xl'>
@@ -475,7 +499,7 @@ export default function Home () {
       </section>
 
       {/* Stats Section */}
-      <section className='py-16 px-4 bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white'>
+      <section className='py-16 px-4 bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] text-white hidden'>
         <div className='container mx-auto max-w-7xl'>
           <div className='grid md:grid-cols-4 gap-8 text-center'>
             <div>

@@ -11,6 +11,7 @@ export default function Navbar() {
   const navigationLinks = [
     { name: 'Beranda', path: '/' },
     { name: 'Portofolio', path: '/portfolio' },
+    { name: 'Harga', path: '/harga' },
     { name: 'Blog', path: '/blog' },
     { name: 'Buku', path: '/buku' },
     { name: 'Hubungi Kami', path: '/contact' },
