@@ -12,7 +12,7 @@ export default function HargaPage() {
   const bimbinganPackages = [
     {
       title: 'Bimbingan Skripsi (S1)',
-      price: 'Mulai Rp 2.500.000',
+      price: 'Rp 3.000.000',
       description: 'Pendampingan komprehensif dari pencarian judul hingga lulus sidang untuk sarjana.',
       features: [
         'Konsultasi Judul & Proposal',
@@ -25,7 +25,7 @@ export default function HargaPage() {
     },
     {
       title: 'Bimbingan Tesis (S2)',
-      price: 'Mulai Rp 4.500.000',
+      price: 'Rp 5.000.000',
       description: 'Konsultasi penelitian tingkat magister dengan analisis dan metodologi mendalam.',
       features: [
         'Konsultasi Matriks & Proposal Tesis',
@@ -39,7 +39,7 @@ export default function HargaPage() {
     },
     {
       title: 'Bimbingan Disertasi (S3)',
-      price: 'Hubungi Admin',
+      price: 'Rp 9.000.000',
       description: 'Pendampingan tingkat doktoral untuk pencarian novelty dan publikasi internasional.',
       features: [
         'Eksplorasi Novelty Penelitian',
@@ -54,56 +54,56 @@ export default function HargaPage() {
 
   const packages = [
     {
-      title: 'Penelitian Deskriptif Komparatif',
-      price: 'Mulai Rp 750.000',
-      description: 'Analisis uji beda (T-test, ANOVA) untuk membandingkan variabel antar kelompok.',
+      title: 'Olah Data SPSS',
+      price: 'Rp 1.500.000',
+      description: 'Analisis statistik parametrik/non-parametrik dan regresi menggunakan SPSS.',
       features: [
+        'Input & Cleaning Data',
         'Uji Validitas & Reliabilitas',
-        'Uji Prasyarat (Normalitas, Homogenitas)',
-        'Uji Beda (T-test / ANOVA)',
-        'Output Interpretasi Lengkap',
-        'Free Konsultasi & Revisi 2x'
+        'Uji Asumsi Klasik/Prasyarat',
+        'Output SPSS & Interpretasi Lengkap',
+        'Free Konsultasi & Revisi'
       ],
-      whatsappText: 'Halo, saya ingin bertanya tentang Paket Penelitian Deskriptif Komparatif.'
+      whatsappText: 'Halo, saya ingin bertanya tentang Jasa Olah Data SPSS.'
     },
     {
-      title: 'Penelitian Deskriptif Korelasional',
-      price: 'Mulai Rp 850.000',
-      description: 'Analisis hubungan antar variabel menggunakan metode korelasi Pearson/Spearman.',
+      title: 'Olah Data SEM (AMOS/PLS)',
+      price: 'Rp 3.000.000',
+      description: 'Analisis jalur (Path Analysis) dan pemodelan struktural tingkat lanjut.',
       features: [
-        'Uji Validitas & Reliabilitas',
-        'Uji Prasyarat (Normalitas, Linieritas)',
-        'Uji Korelasi Bivariat',
-        'Output Interpretasi Lengkap',
-        'Free Konsultasi & Revisi 2x'
+        'Outer Model & Inner Model',
+        'Validitas Konvergen & Diskriminan',
+        'Uji Hipotesis Jalur & Bootstrapping',
+        'Output AMOS/PLS & Interpretasi',
+        'Free Konsultasi & Revisi'
       ],
-      whatsappText: 'Halo, saya ingin bertanya tentang Paket Penelitian Deskriptif Korelasional.'
+      whatsappText: 'Halo, saya ingin bertanya tentang Jasa Olah Data SEM (AMOS/PLS).'
     },
     {
-      title: 'Analisis Regresi Linier',
-      price: 'Mulai Rp 1.000.000',
-      description: 'Uji pengaruh variabel independen terhadap dependen menggunakan regresi.',
+      title: 'Proposal & Bab 4-5 Tesis (S2)',
+      price: 'Mulai Rp 2.000.000',
+      description: 'Bantuan parsial penulisan proposal atau pembahasan hasil penelitian tingkat magister.',
       features: [
-        'Uji Validitas & Reliabilitas',
-        'Uji Asumsi Klasik Lengkap',
-        'Uji Regresi Linier Berganda',
-        'Uji Hipotesis (T, F, R-Square)',
-        'Free Konsultasi & Revisi 2x'
+        'Penulisan Proposal: Rp 3.000.000',
+        'Penulisan Bab 4 & 5: Rp 2.000.000',
+        '30+ Jurnal Reputasi Terpilih',
+        'Manajemen Referensi Mendeley',
+        'Sesuai Panduan Kampus'
       ],
-      whatsappText: 'Halo, saya ingin bertanya tentang Paket Analisis Regresi Linier Berganda.'
+      whatsappText: 'Halo, saya ingin bertanya tentang Jasa Pembuatan Proposal / Bab 4-5 Tesis.'
     },
     {
-      title: 'Analisis SEM (AMOS / PLS)',
-      price: 'Mulai Rp 1.500.000',
-      description: 'Analisis jalur (Path Analysis) dan pemodelan struktural kompleks.',
+      title: 'Proposal & Bab 4-5 Disertasi (S3)',
+      price: 'Rp 4.000.000',
+      description: 'Bantuan parsial penulisan proposal atau pembahasan hasil penelitian tingkat doktoral.',
       features: [
-        'Outer Model (Validitas Konvergen/Diskriminan)',
-        'Inner Model (R-Square, Q-Square)',
-        'Uji Hipotesis Jalur (Bootstrapping)',
-        'Uji Efek Mediasi/Moderasi',
-        'Free Konsultasi & Revisi 2x'
+        'Penulisan Proposal: Rp 4.000.000',
+        'Penulisan Bab 4 & 5: Rp 4.000.000',
+        '30+ Jurnal Reputasi Terpilih',
+        'Manajemen Referensi Mendeley',
+        'Sesuai Panduan Kampus'
       ],
-      whatsappText: 'Halo, saya ingin bertanya tentang Paket Analisis SEM (AMOS/PLS).'
+      whatsappText: 'Halo, saya ingin bertanya tentang Jasa Pembuatan Proposal / Bab 4-5 Disertasi.'
     }
   ];
 
@@ -177,9 +177,9 @@ export default function HargaPage() {
       <section className='px-4'>
         <div className='container mx-auto max-w-7xl'>
           <div className='text-center mb-10'>
-            <h2 className='text-3xl font-bold text-[#1a3a52] mb-4'>Jasa Olah Data & Analisis</h2>
+            <h2 className='text-3xl font-bold text-[#1a3a52] mb-4'>Jasa Olah Data & Layanan Parsial</h2>
             <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
-            <p className='text-gray-600 mt-4'>Khusus untuk Anda yang hanya membutuhkan bantuan olah data statistik.</p>
+            <p className='text-gray-600 mt-4'>Bantuan spesifik untuk olah data atau penulisan bab tertentu (Proposal / Bab 4-5).</p>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {packages.map((pkg, index) => (
