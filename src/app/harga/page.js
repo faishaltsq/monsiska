@@ -3,11 +3,54 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Harga Jasa Konsultan & Olah Data | Monsiskami',
-  description: 'Daftar harga layanan konsultasi penelitian, bimbingan, dan olah data statistik (SPSS, AMOS, PLS, Regresi) di Monsiskami.',
+  description: 'Daftar harga layanan konsultasi penelitian, bimbingan Skripsi/Tesis/Disertasi, dan olah data statistik di Monsiskami.',
 };
 
 export default function HargaPage() {
   const whatsappNumber = '6281329796998';
+
+  const bimbinganPackages = [
+    {
+      title: 'Bimbingan Skripsi (S1)',
+      price: 'Mulai Rp 2.500.000',
+      description: 'Pendampingan komprehensif dari pencarian judul hingga lulus sidang untuk sarjana.',
+      features: [
+        'Konsultasi Judul & Proposal',
+        'Bimbingan Penyusunan Bab 1-3',
+        'Olah Data & Pembahasan Bab 4-5',
+        'Review Bebas Plagiasi',
+        'Simulasi & Persiapan Sidang'
+      ],
+      whatsappText: 'Halo, saya ingin bertanya tentang Paket Bimbingan Full Skripsi (S1).'
+    },
+    {
+      title: 'Bimbingan Tesis (S2)',
+      price: 'Mulai Rp 4.500.000',
+      description: 'Konsultasi penelitian tingkat magister dengan analisis dan metodologi mendalam.',
+      features: [
+        'Konsultasi Matriks & Proposal Tesis',
+        'Bimbingan Bab 1-3 Komprehensif',
+        'Olah Data Lanjut (SPSS/SEM/PLS)',
+        'Bimbingan Pembahasan & Publikasi',
+        'Simulasi & Persiapan Sidang Tesis'
+      ],
+      whatsappText: 'Halo, saya ingin bertanya tentang Paket Bimbingan Full Tesis (S2).',
+      isPopular: true
+    },
+    {
+      title: 'Bimbingan Disertasi (S3)',
+      price: 'Hubungi Admin',
+      description: 'Pendampingan tingkat doktoral untuk pencarian novelty dan publikasi internasional.',
+      features: [
+        'Eksplorasi Novelty Penelitian',
+        'Konsultasi Proposal Disertasi',
+        'Analisis Data Kompleks',
+        'Pendampingan Publikasi Scopus',
+        'Persiapan Ujian Tertutup/Terbuka'
+      ],
+      whatsappText: 'Halo, saya ingin bertanya tentang Paket Bimbingan Full Disertasi (S3).'
+    }
+  ];
 
   const packages = [
     {
@@ -37,7 +80,7 @@ export default function HargaPage() {
       whatsappText: 'Halo, saya ingin bertanya tentang Paket Penelitian Deskriptif Korelasional.'
     },
     {
-      title: 'Analisis Regresi Linier (Berganda)',
+      title: 'Analisis Regresi Linier',
       price: 'Mulai Rp 1.000.000',
       description: 'Uji pengaruh variabel independen terhadap dependen menggunakan regresi.',
       features: [
@@ -47,8 +90,7 @@ export default function HargaPage() {
         'Uji Hipotesis (T, F, R-Square)',
         'Free Konsultasi & Revisi 2x'
       ],
-      whatsappText: 'Halo, saya ingin bertanya tentang Paket Analisis Regresi Linier Berganda.',
-      isPopular: true
+      whatsappText: 'Halo, saya ingin bertanya tentang Paket Analisis Regresi Linier Berganda.'
     },
     {
       title: 'Analisis SEM (AMOS / PLS)',
@@ -74,26 +116,77 @@ export default function HargaPage() {
             Pilihan Paket Layanan
           </h1>
           <p className='text-lg text-gray-600 leading-relaxed'>
-            Investasi terbaik untuk kelancaran penelitian Anda. Pilih paket sesuai dengan metode analisis yang Anda butuhkan. Kami siap membantu hingga tuntas.
+            Investasi terbaik untuk kelancaran penelitian Anda. Pilih paket bimbingan full atau jasa olah data sesuai kebutuhan.
           </p>
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className='px-4'>
+      {/* Bimbingan Skripsi, Tesis, Disertasi Cards */}
+      <section className='px-4 mb-20'>
         <div className='container mx-auto max-w-7xl'>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-            {packages.map((pkg, index) => (
+          <div className='text-center mb-10'>
+            <h2 className='text-3xl font-bold text-[#1a3a52] mb-4'>Paket Bimbingan Full</h2>
+            <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
+            <p className='text-gray-600 mt-4'>Pendampingan dari awal pembuatan proposal hingga lulus sidang.</p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+            {bimbinganPackages.map((pkg, index) => (
               <div 
                 key={index} 
                 className={`bg-white rounded-2xl p-8 relative flex flex-col h-full border ${pkg.isPopular ? 'border-[#2563eb] shadow-xl transform md:-translate-y-2' : 'border-gray-200 shadow-sm hover:shadow-lg hover:border-[#2563eb]/50'} transition-all duration-300`}
               >
                 {pkg.isPopular && (
                   <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#2563eb] text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full shadow-md'>
-                    Paling Diminati
+                    Paling Banyak Diambil
                   </div>
                 )}
                 
+                <h3 className='text-xl font-bold text-[#1a3a52] mb-2'>{pkg.title}</h3>
+                <p className='text-gray-500 text-sm mb-6 min-h-[40px]'>{pkg.description}</p>
+                
+                <div className='mb-6 pb-6 border-b border-gray-100'>
+                  <span className='text-3xl font-extrabold text-[#1a3a52]'>{pkg.price}</span>
+                </div>
+
+                <ul className='space-y-4 mb-8 flex-grow'>
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className='flex items-start'>
+                      <svg className='w-5 h-5 text-[#2563eb] mr-3 flex-shrink-0 mt-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+                      </svg>
+                      <span className='text-gray-700 text-sm'>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a 
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(pkg.whatsappText)}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className={`w-full py-3 px-4 rounded-lg font-bold text-center transition-colors duration-200 ${pkg.isPopular ? 'bg-[#2563eb] text-white hover:bg-[#1d4ed8]' : 'bg-blue-50 text-[#2563eb] hover:bg-blue-100'}`}
+                >
+                  Konsultasi Sekarang
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Olah Data Cards */}
+      <section className='px-4'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='text-center mb-10'>
+            <h2 className='text-3xl font-bold text-[#1a3a52] mb-4'>Jasa Olah Data & Analisis</h2>
+            <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
+            <p className='text-gray-600 mt-4'>Khusus untuk Anda yang hanya membutuhkan bantuan olah data statistik.</p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+            {packages.map((pkg, index) => (
+              <div 
+                key={index} 
+                className='bg-white rounded-2xl p-8 relative flex flex-col h-full border border-gray-200 shadow-sm hover:shadow-lg hover:border-[#2563eb]/50 transition-all duration-300'
+              >
                 <h3 className='text-xl font-bold text-[#1a3a52] mb-2'>{pkg.title}</h3>
                 <p className='text-gray-500 text-sm mb-6 min-h-[40px]'>{pkg.description}</p>
                 
@@ -116,32 +209,12 @@ export default function HargaPage() {
                   href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(pkg.whatsappText)}`}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className={`w-full py-3 px-4 rounded-lg font-bold text-center transition-colors duration-200 ${pkg.isPopular ? 'bg-[#2563eb] text-white hover:bg-[#1d4ed8]' : 'bg-blue-50 text-[#2563eb] hover:bg-blue-100'}`}
+                  className='w-full py-3 px-4 rounded-lg font-bold text-center transition-colors duration-200 bg-blue-50 text-[#2563eb] hover:bg-blue-100'
                 >
-                  Konsultasi Sekarang
+                  Pesan Paket Ini
                 </a>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Custom Section */}
-      <section className='px-4 mt-16'>
-        <div className='container mx-auto max-w-4xl'>
-          <div className='bg-gradient-to-r from-[#1a3a52] to-[#2d5a7b] rounded-2xl p-8 md:p-12 text-center text-white shadow-xl'>
-            <h2 className='text-2xl md:text-3xl font-bold mb-4 !text-white'>Butuh Bimbingan Full dari Awal?</h2>
-            <p className='text-gray-200 mb-8 max-w-2xl mx-auto'>
-              Selain jasa olah data, kami juga melayani konsultasi penyusunan proposal, skripsi, tesis, dan disertasi dari awal hingga simulasi sidang. Harga menyesuaikan dengan tingkat kesulitan dan jenjang pendidikan.
-            </p>
-            <a 
-              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Halo, saya ingin konsultasi mengenai bimbingan full penelitian saya.')}`}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-block bg-white text-[#1a3a52] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-200'
-            >
-              Hubungi Admin via WhatsApp
-            </a>
           </div>
         </div>
       </section>
