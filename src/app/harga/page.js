@@ -112,10 +112,10 @@ export default function HargaPage() {
       {/* Hero Section */}
       <section className='text-center px-4 mb-16'>
         <div className='container mx-auto max-w-4xl'>
-          <h1 className='text-4xl md:text-5xl font-extrabold text-[#1a3a52] mb-6'>
+          <h1 className='text-3xl md:text-5xl font-extrabold text-[#1a3a52] mb-4 md:mb-6'>
             Pilihan Paket Layanan
           </h1>
-          <p className='text-lg text-gray-600 leading-relaxed'>
+          <p className='text-base md:text-lg text-gray-600 leading-relaxed px-2'>
             Investasi terbaik untuk kelancaran penelitian Anda. Pilih paket bimbingan full atau jasa olah data sesuai kebutuhan.
           </p>
         </div>
@@ -129,14 +129,14 @@ export default function HargaPage() {
             <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
             <p className='text-gray-600 mt-4'>Pendampingan dari awal pembuatan proposal hingga lulus sidang.</p>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
             {bimbinganPackages.map((pkg, index) => (
               <div 
                 key={index} 
                 className={`bg-white rounded-2xl p-8 relative flex flex-col h-full border ${pkg.isPopular ? 'border-[#2563eb] shadow-xl transform md:-translate-y-2' : 'border-gray-200 shadow-sm hover:shadow-lg hover:border-[#2563eb]/50'} transition-all duration-300`}
               >
                 {pkg.isPopular && (
-                  <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#2563eb] text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full shadow-md'>
+                  <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#2563eb] text-white text-[10px] md:text-xs font-bold uppercase tracking-wider py-1 px-3 md:px-4 rounded-full shadow-md whitespace-nowrap'>
                     Paling Banyak Diambil
                   </div>
                 )}
@@ -145,7 +145,7 @@ export default function HargaPage() {
                 <p className='text-gray-500 text-sm mb-6 min-h-[40px]'>{pkg.description}</p>
                 
                 <div className='mb-6 pb-6 border-b border-gray-100'>
-                  <span className='text-3xl font-extrabold text-[#1a3a52]'>{pkg.price}</span>
+                  <span className='text-2xl lg:text-3xl font-extrabold text-[#1a3a52]'>{pkg.price}</span>
                 </div>
 
                 <ul className='space-y-4 mb-8 flex-grow'>
@@ -191,7 +191,7 @@ export default function HargaPage() {
                 <p className='text-gray-500 text-sm mb-6 min-h-[40px]'>{pkg.description}</p>
                 
                 <div className='mb-6 pb-6 border-b border-gray-100'>
-                  <span className='text-3xl font-extrabold text-[#1a3a52]'>{pkg.price}</span>
+                  <span className='text-2xl lg:text-3xl font-extrabold text-[#1a3a52]'>{pkg.price}</span>
                 </div>
 
                 <ul className='space-y-4 mb-8 flex-grow'>
