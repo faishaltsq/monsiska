@@ -106,7 +106,7 @@ const MenuBar = ({ editor, setUploading }) => {
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
         className={`px-2 py-1 rounded text-sm ${editor.isActive('blockquote') ? 'bg-blue-200 text-blue-800' : 'bg-white hover:bg-gray-200 border'}`}
       >
-        " Quote
+        &quot; Quote
       </button>
       <button type="button" onClick={setLink} className="px-2 py-1 rounded text-sm bg-white hover:bg-gray-200 border">
         Link
