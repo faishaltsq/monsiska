@@ -84,58 +84,6 @@ const additionalInfo = [
   }
 ]
 
-const testimonials = [
-  {
-    name: 'Siti Nurhaliza',
-    role: 'Mahasiswa S2 Manajemen',
-    university: 'Universitas Muhammadiyah',
-    content: 'Berkat bimbingan dari Monsiskami, saya berhasil menyelesaikan tesis dengan analisis data yang tepat. Tim mereka sangat profesional dan responsif terhadap setiap pertanyaan saya.',
-    rating: 5
-  },
-  {
-    name: 'Dr. Bambang Sutrisno',
-    role: 'Ketua Program Studi',
-    university: 'Akademi Kesehatan',
-    content: 'Monsiskami membantu lembaga kami mencapai akreditasi dengan solusi manajemen mutu yang komprehensif. Layanan mereka sangat terstruktur dan profesional.',
-    rating: 5
-  },
-  {
-    name: 'Muhammad Rifqi',
-    role: 'Mahasiswa S1 Ekonomi',
-    university: 'Universitas Negeri',
-    content: 'Pelatihan SPSS dari Monsiskami sangat membantu. Instrukturnya sabar dan mudah dipahami, membuat saya lebih percaya diri dalam mengolah data.',
-    rating: 5
-  },
-  {
-    name: 'Yuni Wahyuningsih',
-    role: 'Mahasiswa S3 Pendidikan',
-    university: 'Universitas Pendidikan Indonesia',
-    content: 'Konsultasi metodologi penelitian di Monsiskami sangat komprehensif. Dari pemilihan metode hingga analisis data, semuanya ditangani dengan profesional.',
-    rating: 5
-  }
-]
-
-const caseStudies = [
-  {
-    title: 'Peningkatan Akreditasi Rumah Sakit',
-    category: 'Manajemen Mutu',
-    description: 'Membantu RSU mencapai akreditasi penuh melalui implementasi sistem manajemen mutu ISO 9001:2015',
-    results: ['Akreditasi meningkat dari C menjadi B', 'Tingkat kepuasan pasien +45%', 'Efisiensi operasional +30%']
-  },
-  {
-    title: 'Optimalisasi Penelitian Multi-Center',
-    category: 'Penelitian Klinis',
-    description: 'Konsultasi metodologi dan analisis data untuk penelitian kolaboratif 5 institusi kesehatan',
-    results: ['Publikasi internasional terbit', 'Tingkat completion rate 100%', 'Data quality score 98%']
-  },
-  {
-    title: 'Training SPSS untuk Staf Akademik',
-    category: 'Pelatihan Statistik',
-    description: 'Program pelatihan 12 minggu untuk 50+ dosen dan peneliti di universitas swasta',
-    results: ['95% peserta lulus sertifikasi', 'Publikasi penelitian +200%', 'Kepuasan peserta 4.8/5']
-  }
-]
-
 export default function Home () {
   const [randomPosts, setRandomPosts] = useState([])
 
@@ -361,71 +309,6 @@ export default function Home () {
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className='py-16 px-4 bg-white'>
-        <div className='container mx-auto max-w-7xl'>
-          <div className='text-center mb-12'>
-            <h2 className='text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4'>
-              Kepercayaan dari Ribuan Klien
-            </h2>
-            <div className='w-16 h-1 bg-[#2563eb] mx-auto mb-4'></div>
-            <p className='text-gray-600 text-lg'>Testimoni nyata dari klien yang telah merasakan manfaat layanan kami</p>
-          </div>
-          <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className='bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition'>
-                <div className='flex mb-4'>
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className='text-yellow-400 text-lg'>★</span>
-                  ))}
-                </div>
-                <p className='text-gray-700 mb-4 text-sm italic'>&quot;{testimonial.content}&quot;</p>
-                <div className='border-t pt-4'>
-                  <p className='font-bold text-[#1a3a52]'>{testimonial.name}</p>
-                  <p className='text-sm text-gray-600'>{testimonial.role}</p>
-                  <p className='text-xs text-gray-500'>{testimonial.university}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section className='py-16 px-4 bg-gray-50'>
-        <div className='container mx-auto max-w-7xl'>
-          <div className='text-center mb-12'>
-            <h2 className='text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4'>
-              Studi Kasus Sukses
-            </h2>
-            <div className='w-16 h-1 bg-[#2563eb] mx-auto mb-4'></div>
-            <p className='text-gray-600 text-lg'>Hasil nyata yang kami capai bersama klien</p>
-          </div>
-          <div className='grid md:grid-cols-3 gap-8'>
-            {caseStudies.map((caseStudy, index) => (
-              <div key={index} className='bg-white rounded-lg p-8 shadow-sm border border-gray-200 hover:shadow-lg transition'>
-                <div className='inline-block bg-[#2563eb] text-white text-xs font-bold px-3 py-1 rounded-full mb-4'>
-                  {caseStudy.category}
-                </div>
-                <h3 className='text-xl font-bold text-[#1a3a52] mb-3'>{caseStudy.title}</h3>
-                <p className='text-gray-600 mb-6'>{caseStudy.description}</p>
-                <div className='border-t pt-6'>
-                  <p className='text-sm font-semibold text-[#1a3a52] mb-3'>Hasil yang Dicapai:</p>
-                  <ul className='space-y-2'>
-                    {caseStudy.results.map((result, idx) => (
-                      <li key={idx} className='flex items-start text-sm text-gray-700'>
-                        <span className='text-[#2563eb] font-bold mr-2'>✓</span>
-                        <span>{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             ))}
           </div>
