@@ -3,27 +3,28 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { BarChart3, TrendingUp, Award, GraduationCap, ArrowRight, ExternalLink } from 'lucide-react'
 
 const services = [
   {
     title: 'Konsultasi Penelitian',
     description: 'Bimbingan profesional untuk skripsi, tesis, dan disertasi dengan metodologi yang tepat.',
-    icon: '📊'
+    icon: BarChart3
   },
   {
     title: 'Pelatihan SPSS & Statistik',
     description: 'Pembelajaran mendalam tentang analisis data dan software statistik modern.',
-    icon: '📈'
+    icon: TrendingUp
   },
   {
     title: 'Manajemen Mutu & ISO',
     description: 'Sertifikasi ISO 9001:2015 dan implementasi sistem manajemen mutu.',
-    icon: '⭐'
+    icon: Award
   },
   {
     title: 'Pelatihan Akreditasi',
     description: 'Program pelatihan untuk mempersiapkan lembaga meraih akreditasi berkualitas.',
-    icon: '🎓'
+    icon: GraduationCap
   }
 ]
 
@@ -176,18 +177,23 @@ export default function Home () {
             <div className='w-16 h-1 bg-[#2563eb] mx-auto'></div>
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className='bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition duration-300 border border-gray-100'
-              >
-                <div className='text-4xl mb-4'>{service.icon}</div>
-                <h3 className='text-xl font-bold text-[#1a3a52] mb-3'>
-                  {service.title}
-                </h3>
-                <p className='text-gray-600'>{service.description}</p>
-              </div>
-            ))}
+            {services.map((service, index) => {
+              const Icon = service.icon
+              return (
+                <div
+                  key={index}
+                  className='bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group'
+                >
+                  <div className='w-12 h-12 rounded-lg bg-blue-50 text-[#2563eb] flex items-center justify-center mb-5 group-hover:bg-[#2563eb] group-hover:text-white transition-colors duration-300'>
+                    <Icon className='w-6 h-6' />
+                  </div>
+                  <h3 className='text-xl font-bold text-[#1a3a52] mb-3'>
+                    {service.title}
+                  </h3>
+                  <p className='text-gray-600 text-sm leading-relaxed'>{service.description}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -352,6 +358,64 @@ export default function Home () {
           <div className='text-center mt-12'>
             <Link href='/blog' className='inline-block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3 px-8 rounded-lg transition'>
               Lihat Semua Artikel
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Apps Showcase */}
+      <section className='py-20 px-4 bg-gray-50'>
+        <div className='container mx-auto max-w-7xl'>
+          <div className='text-center mb-14'>
+            <h2 className='text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4'>Produk Digital Kami</h2>
+            <div className='w-16 h-1 bg-[#2563eb] mx-auto mb-4' />
+            <p className='text-gray-500 max-w-2xl mx-auto'>Sistem informasi berbasis web untuk mendukung operasional rumah sakit</p>
+          </div>
+          <div className='grid md:grid-cols-2 gap-8'>
+            {[
+              {
+                title: 'SIM Akreditasi RS',
+                desc: 'Manajemen akreditasi KARS — matriks PDCA, dokumen RDWOS, auto-scoring, 13 role pengguna',
+                screenshot: '/images/sim-akreditasi-screenshot.png',
+                url: 'https://sim-akreditasi-web-production.up.railway.app',
+                tech: ['Django', 'PostgreSQL', 'Supabase'],
+              },
+              {
+                title: 'SIM-KTKL',
+                desc: 'Manajemen Komite Tenaga Kesehatan Lainnya — Kredensial, Evaluasi OPPE, Etik & Disiplin',
+                screenshot: '/images/sim-ktkl-screenshot.png',
+                url: 'https://sim-ktkl-production.up.railway.app',
+                tech: ['Django', 'PostgreSQL', 'Bootstrap 5'],
+              },
+            ].map(app => (
+              <Link href={app.url} key={app.title} target='_blank' rel='noopener noreferrer' className='group'>
+                <div className='bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
+                  <div className='relative h-56 bg-gray-100'>
+                    <Image src={app.screenshot} alt={app.title} fill className='object-cover object-top' />
+                    <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6'>
+                      <span className='inline-flex items-center gap-2 text-white font-semibold text-sm'>
+                        <ExternalLink className='w-4 h-4' />
+                        Lihat Aplikasi
+                      </span>
+                    </div>
+                  </div>
+                  <div className='p-6'>
+                    <h3 className='text-xl font-bold text-[#1a3a52] mb-2 group-hover:text-[#2563eb] transition-colors'>{app.title}</h3>
+                    <p className='text-gray-500 text-sm mb-4'>{app.desc}</p>
+                    <div className='flex flex-wrap gap-2'>
+                      {app.tech.map(t => (
+                        <span key={t} className='text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium'>{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className='text-center mt-10'>
+            <Link href='/portfolio' className='inline-flex items-center gap-2 text-[#2563eb] hover:text-[#1d4ed8] font-semibold transition'>
+              Lihat Semua Portofolio
+              <ArrowRight className='w-4 h-4' />
             </Link>
           </div>
         </div>
